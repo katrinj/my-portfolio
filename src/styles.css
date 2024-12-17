@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --base-color-darkest: black;
+    --base-color-dark: #757575;
+    --base-color-medium: #b3b3b3;
+    --base-color-light: #e6e6e6;
+    --base-color-lightest: white;
+
+    --base-color-darkest-alpha: rgba(117, 117, 117, 0.2);
+
+    --font-color-darkest: black;
+    --font-color-dark: #757575;
+    --font-color-light: #e6e6e6;
+    --font-color-lightest: white;
+
+    --font-family-main: "Manrope", sans-serif;
+    --font-family-accent: "Qwitcher Grypen", cursive;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: var(--base-color-darkest);
+    font-family: --font-family-main;
+    font-size: clamp(1em, 1.5em, 3em);
+    color: var(--base-color-light);
+}
+a {
+    color: var(--font-color-dark);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--font-color-light);
+}

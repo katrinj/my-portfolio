@@ -1,0 +1,80 @@
+/* Basic styles and styles for the smaller screens like mobile in portrait mode. */
+nav {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--base-color-dark);
+}
+
+.home {
+    color: var(--font-color-darkest);
+    order: 1;
+    margin-left: 2rem;
+}
+
+.cv-button {
+    background-color: var(--base-color-light);
+    color: var(--font-color-darkest);
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 0.1rem 0.4rem var(--base-color-darkest);
+    padding: 0.3rem 0.6rem;
+    margin: 1rem;
+    order: 2;
+}
+
+.cv-button:hover {
+    background-color: var(--base-color-lightest);
+}
+
+a {
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.links {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    order: 4;
+}
+.links > a {
+    color: var(--font-color-light);
+    display: block;
+}
+
+.links > a:hover {
+    color: var(--font-color-lightest);
+}
+
+select {
+    order: 3;
+    margin-right: 2rem;
+    border-radius: 0.2rem;
+}
+
+/* Some custom layout values for the bigger screens - desktop and such. */
+@media only screen and (min-width: 600px) {
+    /* Display the entire navbar on single row if the screen is big enough. */
+    nav {
+        flex-wrap: nowrap;
+    }
+
+    /* Display the links side by side in a single row . */
+    .links > a {
+        display: inline-block;
+    }
+
+    /* Switch the positions of links menu and language select, so that the latter is the rightmost. */
+    .links {
+        display: inline-block;
+        order: 3;
+    }
+
+    select {
+        order: 4;
+    }
+}
