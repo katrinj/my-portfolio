@@ -8,7 +8,8 @@
     --base-color-darkest-alpha: rgba(117, 117, 117, 0.2);
 
     --font-color-darkest: black;
-    --font-color-dark: #757575;
+    --font-color-dark: #464646;
+    --font-color-medium: #9c9c9c;
     --font-color-light: #e6e6e6;
     --font-color-lightest: white;
 
@@ -25,7 +26,7 @@ body {
     color: var(--base-color-light);
 }
 a {
-    color: var(--font-color-dark);
+    color: var(--font-color-medium);
     text-decoration: none;
 }
 a:hover {

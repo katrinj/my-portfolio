@@ -1,0 +1,73 @@
+.carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 80%;
+    margin: 2rem auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+button {
+    background-color: black;
+    border: none;
+}
+
+.arrow {
+    font-size: 5.5rem;
+    font-weight: normal;
+    color: var(--font-color-medium);
+}
+
+.arrow:hover {
+    color: var(--font-color-lightest);
+}
+
+.arrow[disabled] {
+    color: var(--font-color-dark);
+}
+
+img {
+    width: 100%;
+}
+
+.caption-container {
+    position: relative;
+    
+}
+
+caption {
+    display: grid;
+    place-content: center;
+    width: 100%;
+    min-height: 4rem;
+    position: absolute;
+    bottom: 0;
+    font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.progress-icons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    color: var(--base-color-darkest-alpha);
+}
+
+.progress-icon {
+    color: var(--font-color-dark)
+}
+
+.progress-icon:hover {    
+    text-shadow: -2px -2px 10px var(--font-color-lightest), 2px 2px 10px var(--font-color-lightest);
+}
+
+.progress-icon-active {
+    color: var(--font-color-lightest)    
+}

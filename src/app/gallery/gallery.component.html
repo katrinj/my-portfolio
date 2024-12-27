@@ -1,1 +1,22 @@
-<p>gallery works!</p>
+
+<div class="carousel">
+    <button class="material-icons arrow" (click)="previousPic()" [disabled]="isFirstItemReached()"> keyboard_arrow_left </button>
+    <div class="img-container">
+        <img [src]="getCurrentPicUrl()" [alt]="getCurrentPicAlt()">
+        <div class="caption-container">
+            <caption>{{getCurrentPicCaption()}}</caption>
+        </div>
+        <div class="progress-icons">
+            @for (item of pics; track item) {
+                <button (click)="activatePic(pics.indexOf(item))">
+               @if (index() == pics.indexOf(item)) {
+                    <div class="material-icons progress-icon-active">circle</div>
+                } @else {
+                    <div class="material-icons progress-icon">circle</div>
+                } 
+                </button>
+            }
+        </div>
+    </div>
+    <button class="material-icons arrow" (click)="nextPic()" [disabled]="isLastItemReached()">keyboard_arrow_right</button>
+</div>
