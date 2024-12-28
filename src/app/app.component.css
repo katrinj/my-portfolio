@@ -1,4 +1,30 @@
-.contact-link-icon {
-    width: 4rem;
-    height: 4rem;
+.social-links, .copyright {
+    display: flex;
+    justify-content: center;
+    background-color: var(--base-color-dark);
+}
+.icons {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin: auto 1rem;
+    transform: scale(0.7, 0.7);
+}
+.icon-li {
+    background: url("/social-icons.png") 0 0;
+}
+.icon-fb {
+    background: url("/social-icons.png") 80px 0;
+}
+.icon-gh {
+    background: url("/social-icons.png") 164px 0;
+}
+.icon-li:hover {
+    background: url("/social-icons.png") 0 80px;
+}
+.icon-fb:hover {
+    background: url("/social-icons.png") 80px 80px;
+}
+.icon-gh:hover {
+    background: url("/social-icons.png") 164px 80px;
 }
