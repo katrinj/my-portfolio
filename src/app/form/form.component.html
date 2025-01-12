@@ -1,9 +1,9 @@
 <h1>Väike küsitlus köögiviljade eelistuste ja tarbimise kohta</h1>
 
 <form [formGroup]="poll" (submit)="submitPoll()">
-    <div>
-    <label for="email">Meiliaadress: </label>
-    <input type="email" name="email" id="email" formControlName="email" class="inputText"> 
+    <div class="emailContainer">
+        <label for="email">Meiliaadress: </label>
+        <input type="email" name="email" id="email" formControlName="email" class="inputText"> 
     </div>
 
     <div class="checkboxContainer">

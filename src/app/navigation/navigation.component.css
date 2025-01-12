@@ -39,10 +39,11 @@ a {
 
 .links {
     display: block;
-    width: 70%;
+    width: 50%;
     margin: 0 auto;
     text-align: center;
     order: 4;
+    padding-bottom: 1rem;
 }
 
 .links > a {
@@ -85,6 +86,7 @@ select {
     .links {
         display: inline-block;
         order: 3;
+        padding-bottom: 0;
     }
 
     select {

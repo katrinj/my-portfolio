@@ -2,9 +2,14 @@ h1 {
     text-align: center;
 }
 
+.emailContainer {
+    display: flex;
+    flex-direction: column;
+}
+
 input.checkbox {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 0.8rem;
+    height: 0.8rem;
     margin-right: 1rem;
 }   
 
@@ -26,12 +31,12 @@ input.percentage {
 form {
     display: flex;
     flex-direction: column;
-    font-size: 2rem;
+    font-size: 1.3rem;
     gap: 2rem;
     background-color: var(--base-color-darkest-alpha);
     width: 95%;
     margin: 0 auto;
-    padding: 3rem;
+    padding: 1rem;
     border-radius: 1.5rem;
 }
 
@@ -79,4 +84,21 @@ fieldset {
     fieldset {
         width: 49%;
     }
+
+    form {
+        padding: 3rem;
+        font-size: 2rem;
+    }
+
+    .emailContainer {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    input.checkbox {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 1rem;
+    }   
 }
