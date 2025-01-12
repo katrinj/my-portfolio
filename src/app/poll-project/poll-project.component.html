@@ -1,0 +1,8 @@
+@if(!submitted) {
+    <app-form (formSubmittedEvent) = handlePollSubmission($event)></app-form>
+} @else {
+    <app-poll-results [submitPollResp] = "submitPollResponse"></app-poll-results>
+    <br>
+    <button (click)="reloadPoll()">Tagasi ankeedi juurde</button>
+    <br>
+}

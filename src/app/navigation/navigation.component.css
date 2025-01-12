@@ -9,8 +9,11 @@ nav {
 
 .home {
     color: var(--font-color-darkest);
+    font-family: var(--font-family-accent);
     order: 1;
     margin-left: 2rem;
+    font-size: 3rem;
+    font-weight: bold;
 }
 
 .cv-button {
@@ -41,6 +44,7 @@ a {
     text-align: center;
     order: 4;
 }
+
 .links > a {
     color: var(--font-color-light);
     display: block;
@@ -50,10 +54,19 @@ a {
     color: var(--font-color-lightest);
 }
 
+.links > a.active {   
+    color: var(--font-color-dark);
+    border-bottom: 0.2rem solid var(--font-color-dark);
+}
+
 select {
     order: 3;
     margin-right: 2rem;
-    border-radius: 0.2rem;
+    border-radius: 0.6rem;
+    width: 5rem;
+    height: 3rem;
+    font-size: 1.4rem;
+    padding-left: 0.45rem;
 }
 
 /* Some custom layout values for the bigger screens - desktop and such. */

@@ -1,0 +1,6 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    row-gap: 1rem;
+}

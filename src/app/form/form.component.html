@@ -1,1 +1,41 @@
-<p>form works!</p>
+<h1>Väike küsitlus köögiviljade eelistuste ja tarbimise kohta</h1>
+
+<form [formGroup]="poll" (submit)="submitPoll()">
+    <div>
+    <label for="email">Meiliaadress: </label>
+    <input type="email" name="email" id="email" formControlName="email" class="inputText"> 
+    </div>
+
+    <div class="checkboxContainer">
+        <fieldset>
+            <legend> Vali kõik köögiviljad, mis Sulle meeldivad </legend>
+            <div formArrayName="likedveggies" class="veggieList">
+                @for (item of veggies; track item; let i = $index) {
+                    <div>
+                        <input type="checkbox" id="l_{{item.key}}" value="l_{{item.key}}" [formControlName]="i" class="checkbox">
+                        <label for="l_{{item.key}}">{{item.name_et}}</label>
+                    </div>
+                }
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend> Vali kõik köögiviljad, mis Sulle ei meeldi </legend>
+            <div formArrayName="dislikedveggies" class="veggieList">
+            @for (item of veggies; track item; let i = $index) {
+                <div>
+                    <input type="checkbox" id="d_{{item.key}}" value="d_{{item.key}}" [formControlName]="i" class="checkbox">
+                    <label for="d_{{item.key}}">{{item.name_et}}</label>
+                </div>
+            }
+            </div>
+        </fieldset>
+</div>
+    
+<div>
+    <label for="percentage">Kui suure osa Sinu menüüst köögiviljad moodustavad: </label>
+    <input type="number" name="percentage" id="percentage" formControlName="percentage" class="inputText percentage"> <span class="textOutsideFormElements">%</span>
+</div>
+
+    <input type="submit" name="submit" value="Saada" class="submitButton" [disabled]="!poll.valid">
+</form>

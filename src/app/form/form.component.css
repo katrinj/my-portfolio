@@ -1,0 +1,82 @@
+h1 {
+    text-align: center;
+}
+
+input.checkbox {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+}   
+
+.inputText {
+    height: 2.5rem;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+}
+
+input.percentage {
+    width: 4rem;
+}
+
+.textOutsideFormElements {
+    font-size: 1.5rem;
+    padding-left: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    gap: 2rem;
+    background-color: var(--base-color-darkest-alpha);
+    width: 95%;
+    margin: 0 auto;
+    padding: 3rem;
+    border-radius: 1.5rem;
+}
+
+input {
+    border-radius: 0.5rem;
+}
+
+.checkboxContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    gap: 2rem;
+}
+
+.veggieList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+fieldset {
+    width: 96%;
+}
+
+.submitButton {
+    width: 15rem;
+    height: 5rem;
+    margin: 0 auto;
+    font-size: 1.9rem;
+    background-color: var(--base-color-dark);
+    color: var(--font-color-light);
+}
+.submitButton:disabled {
+    background-color: var(--base-color-medium);
+}
+
+/* Some custom layout values for the bigger screens - desktop and such. */
+@media only screen and (min-width: 800px) {
+    .checkboxContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+    }
+
+    fieldset {
+        width: 49%;
+    }
+}

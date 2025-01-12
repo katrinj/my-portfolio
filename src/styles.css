@@ -1,11 +1,12 @@
 :root {
     --base-color-darkest: black;
+    --base-color-darker: #494949;
     --base-color-dark: #757575;
     --base-color-medium: #b3b3b3;
     --base-color-light: #e6e6e6;
     --base-color-lightest: white;
 
-    --base-color-darkest-alpha: rgba(117, 117, 117, 0.2);
+    --base-color-darkest-alpha: rgba(117, 117, 117, 0.3);
 
     --font-color-darkest: black;
     --font-color-dark: #464646;
@@ -13,15 +14,17 @@
     --font-color-light: #e6e6e6;
     --font-color-lightest: white;
 
-    --font-family-main: "Manrope", sans-serif;
-    --font-family-accent: "Qwitcher Grypen", cursive;
+    --font-family-headers: 'Kantumruy Pro', serif;
+    --font-family-accent: 'Qwitcher Grypen', cursive;
+    --font-family-solid: 'Times New Roman', Times, serif;
+    --font-family-main: 'Kantumruy Pro', serif;
 }
 * {
     box-sizing: border-box;
+    font-family: var(--font-family-main);
 }
 body {
     background-color: var(--base-color-darkest);
-    font-family: --font-family-main;
     font-size: clamp(1em, 1.5em, 3em);
     color: var(--base-color-light);
 }
@@ -31,4 +34,19 @@ a {
 }
 a:hover {
     color: var(--font-color-light);
+}
+
+h1,h2,h3 {
+    font-family: var(--font-family-headers);
+    font-weight: 550;
+}
+
+.headerFontSerif {
+    font-family: var(--font-family-solid);
+    font-weight: 500;
+}
+
+.headerFontSansSerif {
+    font-family: var(--font-family-main);
+    font-weight: 500;
 }

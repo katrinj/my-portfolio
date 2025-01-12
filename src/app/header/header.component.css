@@ -20,15 +20,7 @@ h1.portfolio {
     background-color: var(--base-color-medium);
     color: var(--font-color-dark);
     font-size: 2rem;
+    font-family: var(--font-family-solid);
     border-radius: 1.8rem;    
     border-bottom: 0.2rem solid white;
-}
-.name {
-    position: absolute;
-    bottom: 0rem;
-    left: 0.8rem;
-    color: var(--font-color-darkest);
-    font-family: var(--font-family-accent);
-    font-size: 3rem;
-    font-weight: bold;
 }
