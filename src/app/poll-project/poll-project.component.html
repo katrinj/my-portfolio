@@ -1,8 +1,14 @@
-@if(!submitted) {
-    <app-form (formSubmittedEvent) = handlePollSubmission($event)></app-form>
-} @else {
-    <app-poll-results [submitPollResp] = "submitPollResponse"></app-poll-results>
-    <br>
+@if (displayForm) {
+    <app-form [veggies]="veg" (formSubmittedEvent) = handlePollSubmission($event) ></app-form>
+}
+
+<div class="loadingMessage">{{message}}</div>
+
+@for (item of results; track $index) {
+<div>{{item}}</div>
+}
+
+<br>
+@if (resultsReady) {
     <button (click)="reloadPoll()">Tagasi ankeedi juurde</button>
-    <br>
 }

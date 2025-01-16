@@ -1,5 +1,5 @@
 export interface SubmitPollResponse {
-    mostPopularVeggie: string[],
-    leastPopularVeggie: string[],
-    averageFrequency: number
+    mostPopularVeggies: number[],
+    leastPopularVeggies: number[],
+    averagePercentage: number
 }

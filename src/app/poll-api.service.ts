@@ -21,10 +21,15 @@ export class PollApiService {
         },
         body: JSON.stringify(request)
       });
+      if (response.status == 400) {
+        throw new Error("Submission was invalid");
+      } else if (response.status == 500) {
+        throw new Error("Internal server error");
+      }    
       return response.json();
-    } catch (error) {
-      console.log("error occurred: " + error);
-      return undefined;
+   } catch (error : any) {
+      console.log("error occurred: " + error.message);
+      throw new Error(error.message);
     }
   }
 }
