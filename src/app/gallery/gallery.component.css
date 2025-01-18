@@ -1,15 +1,16 @@
 .carousel {
     display: flex;
+    flex-direction: row;
     flex-wrap: nowrap;
-    width: 80%;
+    width: 95%;
     margin: 2rem auto;
     justify-content: center;
-    align-items: center;
 }
 
 .img-container {
     display: flex;
     flex-direction: column;
+    width: 86%;
     align-content: center;
 }
 
@@ -19,9 +20,13 @@ button {
 }
 
 .arrow {
-    font-size: 5.5rem;
+    font-size: 3rem;
     font-weight: normal;
     color: var(--font-color-medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 7%;
 }
 
 .arrow:hover {
@@ -38,30 +43,34 @@ img {
 
 .caption-container {
     position: relative;
-    
 }
 
 caption {
     display: grid;
     place-content: center;
     width: 100%;
-    min-height: 4rem;
+    min-height: 2rem;
     position: absolute;
     bottom: 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
     background-color: rgba(0, 0, 0, 0.6);
 }
 
 .progress-icons {
     margin-top: 1rem;
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    gap: 0.6rem;
     color: var(--base-color-darkest-alpha);
 }
 
 .progress-icon {
     color: var(--font-color-dark)
+}
+
+.progress {
+    max-width: 2rem;
+    font-size: 1rem;
 }
 
 .progress-icon:hover {    
@@ -70,4 +79,36 @@ caption {
 
 .progress-icon-active {
     color: var(--font-color-lightest)    
+}
+
+@media only screen and (min-width: 650px) {
+    .arrow {
+        font-size: 4rem;
+        max-width: 7%;
+    }
+
+    .progress {
+        font-size: 1.5rem;
+    }
+    
+    caption {
+        font-size: 1.3rem;
+        min-height: 3rem;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .arrow {
+        font-size: 5rem;
+        max-width: 7%;
+    }
+
+    .progress {
+        font-size: 2rem;
+    }
+
+    caption {
+        font-size: 1.5rem;
+        min-height: 4rem;
+    }
 }

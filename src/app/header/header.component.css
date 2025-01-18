@@ -1,12 +1,13 @@
 .img-area {    
-    height: 20rem;
+    height: 18rem;
     position: relative;
-    background-image: url(/img-3d.jpg);
+    background-image: url(/img-3d-narrower_600x563px.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     border-top: 0.2rem solid white;
     border-bottom: 0.2rem solid white;
 }
+
 h1.portfolio {
     --portfolio-height: 3rem;
     --portfolio-width: 15.5rem;
@@ -23,4 +24,16 @@ h1.portfolio {
     font-family: var(--font-family-solid);
     border-radius: 1.8rem;    
     border-bottom: 0.2rem solid white;
+}
+
+@media only screen and (min-width: 580px) {
+    .img-area {    
+        background-image: url(/img-3d_800x566px.jpg);
+    }
+}
+
+@media only screen and (min-width: 1900px) {
+    .img-area {    
+        background-image: url(/img-3d_1920x1358px.jpg);
+    }
 }

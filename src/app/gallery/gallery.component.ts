@@ -10,47 +10,47 @@ export class GalleryComponent {
   index = signal(0);
 
   pics = [
-    {url: "./img1_1920x1080px.jpg", caption: "Väike viik", alt: "Pic 1"},
-    {url: "./img2_1920x1080px.jpg", caption: "Sügisene kartulipõld", alt: "Pic 2"},
-    {url: "./img3_1920x1080px.jpg", caption: "Sinisem väike viik", alt: "Pic 3"},
-    {url: "./img4_1920x1080px.jpg", caption: "Männimetsa samblavaip", alt: "Pic 4"},
-    {url: "./img5_1920x1080px.jpg", caption: "Talvine laht", alt: "Pic 5"},
-    {url: "./img6_1920x1080px.jpg", caption: "Männimetsa taimestik", alt: "Pic 6"},
-    {url: "./img7_1920x1080px.jpg", caption: "Rabaäärne mets", alt: "Pic 7"},
-    {url: "./img8_1920x1080px.jpg", caption: "Ploomiõied", alt: "Pic 8"},
-    {url: "./img9_1920x1080px.jpg", caption: "Pohlad", alt: "Pic 9"},
-    {url: "./img10_1920x1080px.jpg", caption: "Kevadised krookused", alt: "Pic 10"}
+    {urlbase: "./img1_", caption: "Väike viik", alt: "Pilt 1"},
+    {urlbase: "./img2_", caption: "Sügis", alt: "Pilt 2"},
+    {urlbase: "./img3_", caption: "Väike viik II", alt: "Pilt 3"},
+    {urlbase: "./img4_", caption: "Männimetsa tekstuurid", alt: "Pilt 4"},
+    {urlbase: "./img5_", caption: "Talvine laht", alt: "Pilt 5"},
+    {urlbase: "./img6_", caption: "Männimetsa tekstuurid II", alt: "Pilt 6"},
+    {urlbase: "./img7_", caption: "Rabaäärne mets", alt: "Pilt 7"},
+    {urlbase: "./img8_", caption: "Ploomiõied", alt: "Pilt 8"},
+    {urlbase: "./img9_", caption: "Pohlad", alt: "Pilt 9"},
+    {urlbase: "./img10_", caption: "Krookused", alt: "Pilt 10"}
   ]
 
-  getCurrentPicUrl() {
-    return this.pics[this.index()].url;
+  getCurrentPicUrlBase(width: number, height: number): string {
+    return this.pics[this.index()].urlbase + "" + width + "x" + height + "px.jpg";
   }
 
-  getCurrentPicCaption() {
+  getCurrentPicCaption(): string {
     return this.pics[this.index()].caption;
   }
 
-  getCurrentPicAlt() {
+  getCurrentPicAlt(): string {
     return this.pics[this.index()].alt;
   }
 
-  isLastItemReached() {
+  isLastItemReached(): boolean {
     return this.index() == this.pics.length - 1;
   }
 
-  isFirstItemReached() {
+  isFirstItemReached(): boolean {
     return this.index() == 0;
   }
 
-  nextPic() {
+  nextPic(): void {
     this.index.update(a => a + 1);
   }
 
-  previousPic() {
+  previousPic(): void {
     this.index.update(a => a - 1);
   }
 
-  activatePic(id : number) {
+  activatePic(id : number): void {
     this.index.set(id);
   }
 }

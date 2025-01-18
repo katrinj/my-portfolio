@@ -2,7 +2,13 @@
 <div class="carousel">
     <button class="material-icons arrow" (click)="previousPic()" [disabled]="isFirstItemReached()"> keyboard_arrow_left </button>
     <div class="img-container">
-        <img [src]="getCurrentPicUrl()" [alt]="getCurrentPicAlt()">
+        <picture>
+            <source class="imgsrc" media="(min-width:1300px)" [srcset]="getCurrentPicUrlBase(1920, 1080)">
+            <source class="imgsrc" media="(min-width:1000px)" [srcset]="getCurrentPicUrlBase(1000, 563)">
+            <source class="imgsrc" media="(min-width:650px)" [srcset]="getCurrentPicUrlBase(750, 422)">
+            <source class="imgsrc" media="(min-width:400px)" [srcset]="getCurrentPicUrlBase(500, 281)">
+            <img [src]="getCurrentPicUrlBase(1000, 563)" [alt]="getCurrentPicAlt()">
+    </picture>
         <div class="caption-container">
             <caption>{{getCurrentPicCaption()}}</caption>
         </div>
@@ -10,9 +16,9 @@
             @for (item of pics; track item) {
                 <button (click)="activatePic(pics.indexOf(item))">
                @if (index() == pics.indexOf(item)) {
-                    <div class="material-icons progress-icon-active">circle</div>
+                    <div class="material-icons progress progress-icon-active">circle</div>
                 } @else {
-                    <div class="material-icons progress-icon">circle</div>
+                    <div class="material-icons progress progress-icon">circle</div>
                 } 
                 </button>
             }
