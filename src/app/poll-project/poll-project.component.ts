@@ -63,35 +63,34 @@ export class PollProjectComponent {
   pollApiService: PollApiService = inject(PollApiService);
 
   submitPollRequest!: SubmitPollRequest;
-  submitPollResponse: SubmitPollResponse | undefined;
 
   handlePollSubmission($event : SubmitPollRequest) {
     this.submitPollRequest = $event;
     this.displayForm = false;
-    this.message = "Please wait. Processing the answers and querying stats.";
+    this.message = $localize`:@@loadingResultsMessage:Üks hetk. Toimub vastuste töötlemine ja statistika kogumine.`;
     this.sendsubmitPollRequest(this.submitPollRequest);
   }
 
   sendsubmitPollRequest(submitPollRequest: SubmitPollRequest) {
     console.log("Request to be sent to the server: " + JSON.stringify(submitPollRequest));
     this.pollApiService.sendSubmitPollRequest(submitPollRequest).then(resp => {
-        this.submitPollResponse = resp;
         console.log("Response received from the server: " + JSON.stringify(resp));
         this.message = "";
         this.displayResults(resp);
+        this.resultsReady = true;
     }).catch(error => {
-      this.message = "Error received from the server: " + error.message;
+      this.message = $localize`:@@serverError:Serveriga suhtlemisel tekkis viga: ` + error.message;
+      this.resultsReady = true;
     });
-    this.resultsReady = true;
   }
 
   displayResults(submitPollResponse : SubmitPollResponse | undefined) {
     if (submitPollResponse == undefined) {
-      this.message = "Could not connect to the server."
+      this.message = $localize`:@@serverConnectionError:Serveriga ei õnnestunud ühenduda.`;
     } else {
-      this.results.push("Most popular veggie: " + this.veggieKeysToNames(submitPollResponse.mostPopularVeggies, true));
-      this.results.push("Least popular veggie: " + this.veggieKeysToNames(submitPollResponse.leastPopularVeggies, true));
-      this.results.push("Average percentage " + submitPollResponse.averagePercentage);
+      this.results.push($localize`:@@resultsMostPopularVeggies:Kõige populaarsemad köögiviljad: ` + this.veggieKeysToNames(submitPollResponse.mostPopularVeggies, true));
+      this.results.push($localize`:@@resultsLeastPopularVeggies:Kõige ebapopulaarsemad köögiviljad: ` + this.veggieKeysToNames(submitPollResponse.leastPopularVeggies, true));
+      this.results.push($localize`:@@resultsAveragePercentage:Keskmine köögiviljade osakaal menüüs: ` + submitPollResponse.averagePercentage + "%");
     }
   }
 
@@ -101,9 +100,9 @@ export class PollProjectComponent {
       for (let i = 0; i < keyList.length; i++) {
         if (keyList[i] == v.key) {
             if (language_et) {
-              veggieNames.push(v.name_et);
+              veggieNames.push(v.name_et + " ");
             } else {
-              veggieNames.push(v.name_en);
+              veggieNames.push(v.name_en + " ");
             }
         }
       }

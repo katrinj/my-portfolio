@@ -2,15 +2,15 @@
     <a routerLink="" class="home">Katrin</a>
     <a routerLink="cv" class="cv-button headerFontSerif">CV</a>
     
-    
     <div class="links">
-        <a routerLink="poll" class="headerFontSansSerif" routerLinkActive="active">Küsitlus</a>
-        <a routerLink="gallery" class="headerFontSansSerif" routerLinkActive="active" >Galerii</a>
-        <a routerLink="restgame" class="headerFontSansSerif" routerLinkActive="active" >Rest-mäng</a>
+        <a routerLink="poll" class="headerFontSansSerif" routerLinkActive="active" i18n="@@navLinkPoll">Küsitlus</a>
+        <a routerLink="gallery" class="headerFontSansSerif" routerLinkActive="active" i18n="@@navLinkCarousel">Galerii</a>
+        <a routerLink="restgame" class="headerFontSansSerif" routerLinkActive="active" i18n="@@navLinkGame">REST-mäng</a>
     </div>
 
-    <select class="headerFontSerif">
-        <option value="EST" class="headerFontSerif">EST</option>
-        <option value="ENG" class="headerFontSerif">ENG</option>
+    <select id="languageOptions" class="headerFontSerif" (change)="selectLanguage($event)">
+        @for (item of getAllSupportedLanguageCodes(); track item; let i = $index) {
+            <option value={{item}} class="headerFontSerif">{{getAllSupportedLanguageDisplayNames()[i]}}</option>
+        }
     </select>
 </nav>

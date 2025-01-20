@@ -1,14 +1,14 @@
-<h1>Väike küsitlus köögiviljade eelistuste ja tarbimise kohta</h1>
+<h1 i18n="@@pollTitle">Väike küsitlus köögiviljade eelistuste ja tarbimise kohta</h1>
 
 <form [formGroup]="poll" (submit)="submitPoll()">
     <div class="emailContainer">
-        <label for="email">Meiliaadress: </label>
+        <label for="email" i18n="@@emailAddress">Meiliaadress: </label>
         <input type="email" name="email" id="email" formControlName="email" class="inputText"> 
     </div>
 
     <div class="checkboxContainer">
         <fieldset>
-            <legend> Vali kõik köögiviljad, mis Sulle meeldivad </legend>
+            <legend i18n="@@chooseLikedVeggies"> Vali kõik köögiviljad, mis Sulle meeldivad </legend>
             <div formArrayName="likedveggies" class="veggieList">
                 @for (item of veggies; track item; let i = $index) {
                     <div>
@@ -20,7 +20,7 @@
         </fieldset>
 
         <fieldset>
-            <legend> Vali kõik köögiviljad, mis Sulle ei meeldi </legend>
+            <legend i18n="@@chooseDisikedVeggies"> Vali kõik köögiviljad, mis Sulle ei meeldi </legend>
             <div formArrayName="dislikedveggies" class="veggieList">
             @for (item of veggies; track item; let i = $index) {
                 <div>
@@ -33,9 +33,9 @@
 </div>
     
 <div>
-    <label for="percentage">Kui suure osa Sinu menüüst köögiviljad moodustavad: </label>
+    <label for="percentage" i18n="@@choosePercentage">Kui suure osa Sinu menüüst köögiviljad moodustavad: </label>
     <input type="number" name="percentage" id="percentage" formControlName="percentage" class="inputText percentage"> <span class="textOutsideFormElements">%</span>
 </div>
 
-    <input type="submit" name="submit" value="Saada" class="submitButton" [disabled]="!poll.valid">
+    <input type="submit" name="submit" value="Saada" i18n-value="@@sendButton" class="submitButton" [disabled]="!poll.valid">
 </form>

@@ -22,9 +22,9 @@ export class PollApiService {
         body: JSON.stringify(request)
       });
       if (response.status == 400) {
-        throw new Error("Submission was invalid");
+        throw new Error($localize`:@@invalidSubmissionError:Probleem sisestatud andmetega`);
       } else if (response.status == 500) {
-        throw new Error("Internal server error");
+        throw new Error($localize`:@@internalServerError:Tekkis serveripoolne viga`);
       }    
       return response.json();
    } catch (error : any) {

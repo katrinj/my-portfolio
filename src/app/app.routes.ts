@@ -9,27 +9,27 @@ export const routes: Routes = [
     {
         path: '',
         component: WelcomeComponent,
-        title: 'Portfolio'
+        title: $localize`:@@mainPageTitle:Portfoolio - KJ`
     },
     {
         path: 'cv',
         component: CvComponent,
-        title: 'Portfolio: CV'
+        title: $localize`:@@cvPageTitle:Portfoolio: CV`
     },
     {
         path: 'poll',
         component: PollProjectComponent,
-        title: 'Portfolio: Küsitluse projekt'
+        title: $localize`:@@pollPageTitle:Portfoolio: Küsitluse projekt`
     },
     {
         path: 'gallery',
         component: GalleryComponent,
-        title: 'Portfolio: Galerii projekt'
+        title: $localize`:@@galleryPageTitle:Portfoolio: Galerii projekt`
     },
     {
         path: 'restgame',
         component: RestgameComponent,
-        title: 'Portfolio: Rest-mängu projekt'
+        title: $localize`:@@gamePageTitle:Portfoolio: REST-mängu projekt`
     }
 
 ];

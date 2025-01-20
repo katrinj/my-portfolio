@@ -2,7 +2,7 @@
     <app-form [veggies]="veg" (formSubmittedEvent) = handlePollSubmission($event) ></app-form>
 }
 
-<div class="loadingMessage">{{message}}</div>
+<div class="message">{{message}}</div>
 
 @for (item of results; track $index) {
 <div>{{item}}</div>
@@ -10,5 +10,5 @@
 
 <br>
 @if (resultsReady) {
-    <button (click)="reloadPoll()">Tagasi ankeedi juurde</button>
+    <button (click)="reloadPoll()" i18n="@@backToPollButton">Tagasi ankeedi juurde</button>
 }
