@@ -1,1 +1,96 @@
-<p>cv works!</p>
+<main>
+    <p class="currentYear">2025</p>
+    <canvas #canvas></canvas>
+    <div class="timeLineItems">
+        @for (item of getTimeLineItems(); track item) {
+            <div [class]=getTimeLineItemTypeClass(item.type)>
+                <div class="timeLineItemHeader">
+                    <p class="itemHeader">{{item.year}}</p>
+                </div>
+
+                <p class="material-icons timeLineTypeIcon"> 
+                    @if(isWorkItem(item.type)) {
+                    business_center 
+                } @else {
+                    school
+                }
+                </p>
+
+                <p class="company">{{item.company}}</p>
+                <p class="role">{{item.role}}</p>
+                <p class="subject">{{item.subject}}</p>
+                <p class="remark">{{item.remark}}</p>
+            </div>
+         }
+    </div>
+
+    <div class="sectionTitle">Tehnilised kogemused</div>
+
+    <div class="techItems">
+        @for (item of getProgrammingLanguages(); track item) {
+            <div class="techItem programmingLanguagesItem">
+                {{item}}
+            </div>
+        }
+    </div>
+    <div class="techItems">
+        @for (item of getHelperSoftware(); track item) {
+            <div class="techItem helperSoftwareItem">
+                {{item}}
+            </div>
+        }
+    </div>
+
+    <div class="techItems">
+        @for (item of getArtSoftware(); track item) {
+            <div class="techItem artSoftwareItem">
+                {{item}}
+            </div>
+        }
+    </div>
+
+    <div class="sectionTitle">Keeled</div>
+
+    <div class="languageItems">
+        @for (item of getLanguageItems(); track item) {
+            <div class="languageItem">
+                <div class="headerContainer">
+                    <p class="itemHeader">{{item.name}}</p>
+                </div>
+                <p>{{item.state}}</p>
+                <p>{{item.studies}}</p>
+                <p>{{item.description}}</p>
+            </div>
+        }
+    </div>
+
+    <div class="sectionTitle">Sertifikaadid</div>
+    <div class="certContainer">
+        <p class="subSectionTitle">Keeled:</p>
+        <div class="certItems">
+            @for (item of getLanguageCertificates(); track item) {
+                <div class="certItem">
+                    <div class="headerContainer">
+                        <p class="itemHeader">{{item.subject}}</p>
+                    </div>
+                    <p class="certType">{{item.type}}</p>
+                    <p class="certYear">{{item.year}}</p>
+                </div>
+            }
+        </div>
+
+        <p class="subSectionTitle">Programmeerimiskeeled:</p>
+        <div class="certItems">
+            @for (item of getTechCertificates(); track item) {
+                <div class="certItem">
+                    <div class="headerContainer">
+                        <p class="itemHeader">{{item.subject}}</p>
+                    </div>
+                    <p class="certType">{{item.type}}</p>
+                    <p class="certYear">{{item.year}}</p>
+                </div>
+            }
+        </div>
+    </div>
+
+</main>
