@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Output, Input, OnInit} from '@angular/core';
+import { Component, EventEmitter, Output, Input, OnInit, inject} from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, FormArray, FormsModule, Validators } from '@angular/forms';
 import { SubmitPollRequest } from '../submit-poll-request';
 import { Veggie } from '../veggie';
+import { LanguageService } from '../language.service';
 
 @Component({
   selector: 'app-form',
@@ -12,6 +13,9 @@ import { Veggie } from '../veggie';
 export class FormComponent implements OnInit {
   @Output() formSubmittedEvent = new EventEmitter<SubmitPollRequest>();
   @Input() veggies: Veggie[] = [];
+
+  languageService: LanguageService = inject(LanguageService);
+
   poll: FormGroup = new FormGroup({});
 
   ngOnInit(): void {
@@ -25,6 +29,15 @@ export class FormComponent implements OnInit {
 
   getAllVeggies(): FormControl[] {
     return this.veggies.map(r => new FormControl(''));
+  }
+
+  getVeggieName(veggie: Veggie): string {
+    const lang = this.languageService.getCurrentLanguage();
+    if (lang == "en") {
+      return veggie.name_en;
+    } else {
+      return veggie.name_et;
+    }
   }
 
   submitPoll() {

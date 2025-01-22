@@ -1,7 +1,14 @@
-.social-links, .copyright  {
+.social-links {
     display: flex;
     justify-content: center;
     background-color: var(--base-color-darker);
+    padding-top: 1.5rem;
+}
+.copyright  {
+    display: flex;
+    justify-content: center;
+    background-color: var(--base-color-darker);
+    padding: 0.5rem 0 1.5rem 0;
 }
 .icons {
     display: inline-block;

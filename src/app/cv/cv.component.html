@@ -24,7 +24,7 @@
          }
     </div>
 
-    <div class="sectionTitle">Tehnilised kogemused</div>
+    <div class="sectionTitle" i18n="@@techStackTitle">Tehnilised kogemused</div>
 
     <div class="techItems">
         @for (item of getProgrammingLanguages(); track item) {
@@ -49,7 +49,7 @@
         }
     </div>
 
-    <div class="sectionTitle">Keeled</div>
+    <div class="sectionTitle" i18n="@@languagesTitle">Keeled</div>
 
     <div class="languageItems">
         @for (item of getLanguageItems(); track item) {
@@ -64,9 +64,9 @@
         }
     </div>
 
-    <div class="sectionTitle">Sertifikaadid</div>
+    <div class="sectionTitle" i18n="@@certsTitle">Sertifikaadid</div>
     <div class="certContainer">
-        <p class="subSectionTitle">Keeled:</p>
+        <p class="subSectionTitle" i18n="@@certsLanguagesTitle">Keeled:</p>
         <div class="certItems">
             @for (item of getLanguageCertificates(); track item) {
                 <div class="certItem">
@@ -79,7 +79,7 @@
             }
         </div>
 
-        <p class="subSectionTitle">Programmeerimiskeeled:</p>
+        <p class="subSectionTitle" i18n="@@certsProgLanguagesTitle">Programmeerimiskeeled:</p>
         <div class="certItems">
             @for (item of getTechCertificates(); track item) {
                 <div class="certItem">

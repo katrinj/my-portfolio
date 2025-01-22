@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { LanguageService } from '../language.service';
 
 @Component({
   selector: 'app-gallery',
@@ -7,19 +8,20 @@ import { Component, signal } from '@angular/core';
   styleUrl: './gallery.component.css'
 })
 export class GalleryComponent {
+  languageService: LanguageService = inject(LanguageService);
   index = signal(0);
 
   pics = [
-    {urlbase: "./img1_", caption: "Väike viik", alt: "Pilt 1"},
-    {urlbase: "./img2_", caption: "Sügis", alt: "Pilt 2"},
-    {urlbase: "./img3_", caption: "Väike viik II", alt: "Pilt 3"},
-    {urlbase: "./img4_", caption: "Männimetsa tekstuurid", alt: "Pilt 4"},
-    {urlbase: "./img5_", caption: "Talvine laht", alt: "Pilt 5"},
-    {urlbase: "./img6_", caption: "Männimetsa tekstuurid II", alt: "Pilt 6"},
-    {urlbase: "./img7_", caption: "Rabaäärne mets", alt: "Pilt 7"},
-    {urlbase: "./img8_", caption: "Ploomiõied", alt: "Pilt 8"},
-    {urlbase: "./img9_", caption: "Pohlad", alt: "Pilt 9"},
-    {urlbase: "./img10_", caption: "Krookused", alt: "Pilt 10"}
+    {urlbase: "./img1_", caption_et: "Väike viik", caption_en: "Lake Väike viik"},
+    {urlbase: "./img2_", caption_et: "Sügis", caption_en: "Autumn"},
+    {urlbase: "./img3_", caption_et: "Kontrastsem väike viik", caption_en: "Lake Väike viik with more contrast"},
+    {urlbase: "./img4_", caption_et: "Männimetsa tekstuurid lähemalt", caption_en: "Pineforest textures up close"},
+    {urlbase: "./img5_", caption_et: "Talvine laht", caption_en: "Winter bay"},
+    {urlbase: "./img6_", caption_et: "Männimetsa tekstuurid kaugemalt", caption_en: "Pineforest textures from farther away"},
+    {urlbase: "./img7_", caption_et: "Rabaäärne mets", caption_en: "Forest near a bog trail"},
+    {urlbase: "./img8_", caption_et: "Ploomiõied", caption_en: "Plum blossoms"},
+    {urlbase: "./img9_", caption_et: "Pohlad", caption_en: "Lingonberries"},
+    {urlbase: "./img10_", caption_et: "Krookused", caption_en: "Crocus flowers"}
   ]
 
   getCurrentPicUrlBase(width: number, height: number): string {
@@ -27,11 +29,21 @@ export class GalleryComponent {
   }
 
   getCurrentPicCaption(): string {
-    return this.pics[this.index()].caption;
+    const lang = this.languageService.getCurrentLanguage();
+    if (lang == "en") {
+      return this.pics[this.index()].caption_en;  
+    } else {
+      return this.pics[this.index()].caption_et;
+    }
   }
 
   getCurrentPicAlt(): string {
-    return this.pics[this.index()].alt;
+    const lang = this.languageService.getCurrentLanguage();
+    if (lang == "en") {
+      return "Image of " + this.pics[this.index()].caption_en;
+    } else {
+      return "Image of " + this.pics[this.index()].caption_et;
+    }
   }
 
   isLastItemReached(): boolean {

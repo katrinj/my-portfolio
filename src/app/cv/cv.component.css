@@ -14,7 +14,7 @@
 }
 
 .timeLineItems {
-    margin-top: 1rem;
+    margin-top: 5rem;
     width: 80%;
     position: absolute;
     top: 40%;
@@ -155,9 +155,9 @@ p.remark {
 .certItems {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 80%;
-    margin: 2rem auto 2rem auto;
-    gap: 4rem;
+    width: 90%;
+    margin: 2rem auto 4rem auto;
+    gap: 1.5rem;
 }
 
 .certItem {
@@ -178,6 +178,7 @@ canvas {
     .timeLineItems {
         top: 30%;
         gap: 2rem;
+        margin-top: 2rem;
     }
     
     p.itemHeader {
@@ -201,4 +202,10 @@ canvas {
     .languageItem {
         width: 100%;
     }
+
+    .certItems {
+        width: 75%;
+        gap: 6rem;
+    }
+    
 }

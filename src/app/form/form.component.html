@@ -13,7 +13,7 @@
                 @for (item of veggies; track item; let i = $index) {
                     <div>
                         <input type="checkbox" id="l_{{item.key}}" value="l_{{item.key}}" [formControlName]="i" class="checkbox">
-                        <label for="l_{{item.key}}">{{item.name_et}}</label>
+                        <label for="l_{{item.key}}">{{getVeggieName(item)}}</label>
                     </div>
                 }
             </div>
@@ -25,7 +25,7 @@
             @for (item of veggies; track item; let i = $index) {
                 <div>
                     <input type="checkbox" id="d_{{item.key}}" value="d_{{item.key}}" [formControlName]="i" class="checkbox">
-                    <label for="d_{{item.key}}">{{item.name_et}}</label>
+                    <label for="d_{{item.key}}">{{getVeggieName(item)}}</label>
                 </div>
             }
             </div>
