@@ -1,11 +1,11 @@
 @if (displayForm) {
-    <app-form [veggies]="veg" (formSubmittedEvent) = handlePollSubmission($event) ></app-form>
+    <app-form [veggies]="veggies" [minPercentage]= "minPercentage" [maxPercentage]="maxPercentage" (formSubmittedEvent) = handlePollSubmission($event) ></app-form>
 }
 
 <div class="message">{{message}}</div>
 
 @for (item of results; track $index) {
-<div>{{item}}</div>
+<div class="results">{{item}}</div>
 }
 
 <br>

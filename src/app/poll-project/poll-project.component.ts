@@ -4,6 +4,7 @@ import { SubmitPollRequest } from '../submit-poll-request';
 import { PollApiService } from '../poll-api.service';
 import { SubmitPollResponse } from '../submit-poll-response';
 import { Veggie } from '../veggie';
+import { LanguageService } from '../language.service';
 
 @Component({
   selector: 'app-poll-project',
@@ -12,7 +13,7 @@ import { Veggie } from '../veggie';
   styleUrl: './poll-project.component.css'
 })
 export class PollProjectComponent {
-  veg = [
+  veggies = [
     {key: 1, name_et: 'Tomat', name_en: 'Tomato'},
     {key: 2, name_et: 'Redis', name_en: 'Radish'},
     {key: 3, name_et: 'Suvikõrvits', name_en: 'Zuccini'},
@@ -56,11 +57,15 @@ export class PollProjectComponent {
     {key: 38, name_et: 'Bataat', name_en: 'Sweet potato'}
   ] satisfies Veggie[];
 
+  minPercentage = 0;
+  maxPercentage = 100;
+
   message = "";
   resultsReady = false;
   results = [""];
   displayForm = true;
   pollApiService: PollApiService = inject(PollApiService);
+  languageService: LanguageService = inject(LanguageService);
 
   submitPollRequest!: SubmitPollRequest;
 
@@ -88,21 +93,23 @@ export class PollProjectComponent {
     if (submitPollResponse == undefined) {
       this.message = $localize`:@@serverConnectionError:Serveriga ei õnnestunud ühenduda.`;
     } else {
-      this.results.push($localize`:@@resultsMostPopularVeggies:Kõige populaarsemad köögiviljad: ` + this.veggieKeysToNames(submitPollResponse.mostPopularVeggies, true));
-      this.results.push($localize`:@@resultsLeastPopularVeggies:Kõige ebapopulaarsemad köögiviljad: ` + this.veggieKeysToNames(submitPollResponse.leastPopularVeggies, true));
+      this.message = $localize`:@@pollResultsHeader:Küsitluse tulemused hetkeseisuga:`;
+      const lang = this.languageService.getCurrentLanguage();
+      this.results.push($localize`:@@resultsMostPopularVeggies:Kõige populaarsemad köögiviljad: ` + this.veggieKeysToNames(submitPollResponse.mostPopularVeggies, lang == "et"));
+      this.results.push($localize`:@@resultsLeastPopularVeggies:Kõige ebapopulaarsemad köögiviljad: ` + this.veggieKeysToNames(submitPollResponse.leastPopularVeggies, lang == "et"));
       this.results.push($localize`:@@resultsAveragePercentage:Keskmine köögiviljade osakaal menüüs: ` + submitPollResponse.averagePercentage + "%");
     }
   }
 
   veggieKeysToNames(keyList : number[], language_et : boolean): string[] {
     let veggieNames: string[] = [];
-    this.veg.forEach(v => {
+    this.veggies.forEach(v => {
       for (let i = 0; i < keyList.length; i++) {
         if (keyList[i] == v.key) {
             if (language_et) {
-              veggieNames.push(v.name_et + " ");
+              veggieNames.push(" " + v.name_et);
             } else {
-              veggieNames.push(v.name_en + " ");
+              veggieNames.push(" " + v.name_en);
             }
         }
       }

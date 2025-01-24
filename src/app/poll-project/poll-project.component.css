@@ -22,3 +22,9 @@ button:hover {
     justify-content: center;
     margin: 6rem auto 1rem auto;
 }
+
+.results {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem 0;
+}

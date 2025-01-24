@@ -13,6 +13,8 @@ import { LanguageService } from '../language.service';
 export class FormComponent implements OnInit {
   @Output() formSubmittedEvent = new EventEmitter<SubmitPollRequest>();
   @Input() veggies: Veggie[] = [];
+  @Input() minPercentage: number = -1;
+  @Input() maxPercentage: number = -1;
 
   languageService: LanguageService = inject(LanguageService);
 
@@ -20,12 +22,20 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
     this.poll = new FormGroup({
-      email: new FormControl('smth1@smth.ee', [Validators.email, Validators.required]),
-      percentage: new FormControl(23, [Validators.required, Validators.min(0)]),
+      email: new FormControl('', [Validators.email, Validators.required]),
+      percentage: new FormControl('', [Validators.required, Validators.min(this.minPercentage), Validators.max(this.maxPercentage)]),
       likedveggies: new FormArray(this.getAllVeggies()),
       dislikedveggies: new FormArray(this.getAllVeggies()),
     })
   } 
+
+  get email() {
+    return this.poll.get('email');
+  }
+
+  get percentage() {
+    return this.poll.get('percentage');
+  }
 
   getAllVeggies(): FormControl[] {
     return this.veggies.map(r => new FormControl(''));

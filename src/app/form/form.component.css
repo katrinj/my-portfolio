@@ -40,6 +40,17 @@ form {
     border-radius: 1.5rem;
 }
 
+.formError {
+    color: darkred;
+    padding: 0.1rem 0 0.3rem 0;
+    font-size: 1.1rem;
+}
+
+.requiredHint {
+    color: darkred;
+    font-size: 1.3rem;
+}
+
 input {
     border-radius: 0.5rem;
 }
@@ -47,7 +58,7 @@ input {
 .checkboxContainer {
     display: flex;
     flex-direction: column;
-    justify-content:space-between;
+    justify-content: space-between;
     gap: 2rem;
 }
 
@@ -59,6 +70,7 @@ input {
 
 fieldset {
     width: 96%;
+    margin: 0 auto;
 }
 
 .submitButton {
@@ -69,8 +81,15 @@ fieldset {
     background-color: var(--base-color-dark);
     color: var(--font-color-light);
 }
-.submitButton:disabled {
+
+.submitButton:hover {
     background-color: var(--base-color-medium);
+    color: var(--font-color-lightest);
+}
+
+.submitButton:disabled {
+    background-color: var(--base-color-darkest);
+    color: var(--font-color-dark);
 }
 
 /* Some custom layout values for the bigger screens - desktop and such. */
@@ -78,7 +97,7 @@ fieldset {
     .checkboxContainer {
         display: flex;
         flex-direction: row;
-        justify-content:space-between;
+        justify-content: space-between;
     }
 
     fieldset {
@@ -86,7 +105,7 @@ fieldset {
     }
 
     form {
-        padding: 3rem;
+        padding: 1rem 3rem 3rem 3rem;
         font-size: 2rem;
     }
 
@@ -94,6 +113,7 @@ fieldset {
         display: flex;
         flex-direction: row;
         gap: 1rem;
+        align-items: end;
     }
 
     input.checkbox {

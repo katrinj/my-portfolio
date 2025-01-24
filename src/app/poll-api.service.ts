@@ -10,8 +10,8 @@ export class PollApiService {
   constructor() { }
 
   async sendSubmitPollRequest(request : SubmitPollRequest) : Promise<SubmitPollResponse | undefined> {
-     //let url = "http://localhost:8080/poll/submit"
-    let url = "https://poll-app-758004356761.europe-north1.run.app/poll/submit";
+     let url = "http://localhost:8080/poll/submit"
+    //let url = "https://poll-app-758004356761.europe-north1.run.app/poll/submit";
     
     try {
       const response = await fetch(url, {
@@ -22,7 +22,7 @@ export class PollApiService {
         body: JSON.stringify(request)
       });
       if (response.status == 400) {
-        throw new Error($localize`:@@invalidSubmissionError:Probleem sisestatud andmetega`);
+        throw new Error($localize`:@@invalidSubmissionError:Probleem sisestatud andmetega. Tõenäoliselt on selle meiliaadressiga juba vastatud. Selles küsitluses varasemaid vastuseid muuta ei saa.`);
       } else if (response.status == 500) {
         throw new Error($localize`:@@internalServerError:Tekkis serveripoolne viga`);
       }    

@@ -2,8 +2,20 @@
 
 <form [formGroup]="poll" (submit)="submitPoll()">
     <div class="emailContainer">
-        <label for="email" i18n="@@emailAddress">Meiliaadress: </label>
-        <input type="email" name="email" id="email" formControlName="email" class="inputText"> 
+        <div>
+            <label for="email" i18n="@@emailAddress">Meiliaadress:</label>
+            <sup class="requiredHint">* </sup>
+        </div>
+        <div class="inputContainer">
+            @if(email?.invalid && (email?.touched || email?.dirty)) {
+                @if (email?.errors?.["required"]) {
+                    <div class="formError" i18n="@@validEmailRequired"> Meiliaadressi sisestamine on kohustuslik. </div>
+                } @else if (email?.errors?.["email"]) {
+                    <div class="formError" i18n="@@validEmailFormat"> See pole õige meiliformaat. </div>
+                }
+            }  
+            <input type="email" name="email" id="email" formControlName="email" class="inputText" required placeholder="smth@smth.ee"> 
+        </div>
     </div>
 
     <div class="checkboxContainer">
@@ -33,7 +45,19 @@
 </div>
     
 <div>
-    <label for="percentage" i18n="@@choosePercentage">Kui suure osa Sinu menüüst köögiviljad moodustavad: </label>
+    @if(percentage?.invalid && (percentage?.touched || percentage?.dirty)) {
+        @if (percentage?.errors?.["required"]) {
+            <div class="formError" i18n="@@validPercentageRequired"> Protsendi valimine on kohustuslik. </div>
+        } @else if (percentage?.errors?.["min"]) {
+            <div class="formError" i18n="@@validPercentageMin"> Protsendi minimaalne väärtus on {{minPercentage}}. </div>
+        } @else if (percentage?.errors?.["max"]) {
+            <div class="formError" i18n="@@validPercentageMax"> Protsendi maksimaalne väärtus on {{maxPercentage}}. </div>
+        }
+    } 
+    <div>
+        <label for="percentage" i18n="@@choosePercentage">Kui suure osa Sinu menüüst köögiviljad moodustavad:</label>
+        <sup class="requiredHint">* </sup>
+    </div>
     <input type="number" name="percentage" id="percentage" formControlName="percentage" class="inputText percentage"> <span class="textOutsideFormElements">%</span>
 </div>
 

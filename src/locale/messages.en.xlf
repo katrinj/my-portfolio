@@ -91,11 +91,27 @@
         </context-group>
       </trans-unit>
       <trans-unit id="emailAddress" datatype="html">
-        <source>Meiliaadress: </source>
+        <source>Meiliaadress:</source>
         <target>Email address: </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/form/form.component.html</context>
-          <context context-type="linenumber">5,6</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="validEmailRequired" datatype="html">
+        <source> Meiliaadressi sisestamine on kohustuslik. </source>
+        <target>Entering email address is mandatory.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form/form.component.html</context>
+          <context context-type="linenumber">12,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="validEmailFormat" datatype="html">
+        <source> See pole õige meiliformaat. </source>
+        <target>That is not a proper email format.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form/form.component.html</context>
+          <context context-type="linenumber">14,16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="chooseLikedVeggies" datatype="html">
@@ -103,7 +119,7 @@
         <target>Select all vegetables that you like </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/form/form.component.html</context>
-          <context context-type="linenumber">11,12</context>
+          <context context-type="linenumber">23,24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="chooseDisikedVeggies" datatype="html">
@@ -111,15 +127,39 @@
         <target>Select all vegetables that you don't like </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/form/form.component.html</context>
-          <context context-type="linenumber">23,24</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="validPercentageRequired" datatype="html">
+        <source> Protsendi valimine on kohustuslik. </source>
+        <target>Entering percentage is mandatory.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form/form.component.html</context>
+          <context context-type="linenumber">50,51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="validPercentageMin" datatype="html">
+        <source> Protsendi minimaalne väärtus on <x id="INTERPOLATION" equiv-text="{{minPercentage}}"/>. </source>
+        <target> Minimal acceptable value is <x id="INTERPOLATION" equiv-text="{{minPercentage}}"/>. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form/form.component.html</context>
+          <context context-type="linenumber">52,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="validPercentageMax" datatype="html">
+        <source> Protsendi maksimaalne väärtus on <x id="INTERPOLATION" equiv-text="{{maxPercentage}}"/>. </source>
+        <target> Maximal acceptable value is <x id="INTERPOLATION" equiv-text="{{maxPercentage}}"/>. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form/form.component.html</context>
+          <context context-type="linenumber">54,55</context>
         </context-group>
       </trans-unit>
       <trans-unit id="choosePercentage" datatype="html">
-        <source>Kui suure osa Sinu menüüst köögiviljad moodustavad: </source>
-        <target>The amount vegetables take up in your daily menu: </target>
+        <source>Kui suure osa Sinu menüüst köögiviljad moodustavad:</source>
+        <target>The amount vegetables take up in your daily menu:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/form/form.component.html</context>
-          <context context-type="linenumber">36,37</context>
+          <context context-type="linenumber">58,59</context>
         </context-group>
       </trans-unit>
       <trans-unit id="sendButton" datatype="html">
@@ -127,7 +167,7 @@
         <target>Send</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/form/form.component.html</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">64</context>
         </context-group>
       </trans-unit>
       <trans-unit id="portfolioLabel" datatype="html">
@@ -163,8 +203,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="invalidSubmissionError" datatype="html">
-        <source>Probleem sisestatud andmetega</source>
-        <target>Submission was invalid</target>
+        <source>Probleem sisestatud andmetega. Tõenäoliselt on selle meiliaadressiga juba vastatud. Selles küsitluses varasemaid vastuseid muuta ei saa.</source>
+        <target>Submission was invalid. Probably caused by reusing the email address. In this poll it is not possible to update a previous entry.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/poll-api.service.ts</context>
           <context context-type="linenumber">25</context>
@@ -191,7 +231,7 @@
         <target>Please wait! Processing your answers and gathering statistics from the database.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/poll-project/poll-project.component.ts</context>
-          <context context-type="linenumber">70</context>
+          <context context-type="linenumber">75</context>
         </context-group>
       </trans-unit>
       <trans-unit id="serverError" datatype="html">
@@ -199,7 +239,7 @@
         <target>An error occurred while contacting the server: </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/poll-project/poll-project.component.ts</context>
-          <context context-type="linenumber">82</context>
+          <context context-type="linenumber">87</context>
         </context-group>
       </trans-unit>
       <trans-unit id="serverConnectionError" datatype="html">
@@ -207,7 +247,15 @@
         <target>Could not connect to the server.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/poll-project/poll-project.component.ts</context>
-          <context context-type="linenumber">89</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="pollResultsHeader" datatype="html">
+        <source>Küsitluse tulemused hetkeseisuga:</source>
+        <target>Poll results so far:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/poll-project/poll-project.component.ts</context>
+          <context context-type="linenumber">96</context>
         </context-group>
       </trans-unit>
       <trans-unit id="resultsMostPopularVeggies" datatype="html">
@@ -215,7 +263,7 @@
         <target>Most popular vegetables: </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/poll-project/poll-project.component.ts</context>
-          <context context-type="linenumber">91</context>
+          <context context-type="linenumber">98</context>
         </context-group>
       </trans-unit>
       <trans-unit id="resultsLeastPopularVeggies" datatype="html">
@@ -223,7 +271,7 @@
         <target>Least popular vegetables: </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/poll-project/poll-project.component.ts</context>
-          <context context-type="linenumber">92</context>
+          <context context-type="linenumber">99</context>
         </context-group>
       </trans-unit>
       <trans-unit id="resultsAveragePercentage" datatype="html">
@@ -231,7 +279,7 @@
         <target>Average percentage of vegetables in the daily menu: </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/poll-project/poll-project.component.ts</context>
-          <context context-type="linenumber">93</context>
+          <context context-type="linenumber">100</context>
         </context-group>
       </trans-unit>
       <trans-unit id="gamePagePlaceholder" datatype="html">
