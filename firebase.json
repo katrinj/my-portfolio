@@ -15,7 +15,7 @@
         "destination": "/en/index.html"
       },
       {
-        "source": "**",
+        "source": "**/et/**",
         "destination": "/et/index.html"
       }
     ]

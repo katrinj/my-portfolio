@@ -12,56 +12,39 @@ export class NavigationComponent implements AfterViewInit {
   languageService: LanguageService = inject(LanguageService)
 
   ngAfterViewInit(): void {
-    console.log("NavigationComponent: afterviewinit: loading language selector value from language service");
+    console.log("NavigationComponent: afterviewinit: loading language selector value from language service: " + this.languageService.getCurrentLanguage());
     (document.getElementById("languageOptions") as HTMLSelectElement).value = this.languageService.getCurrentLanguage();
   }
 
-  selectLanguage(event: Event){
-    const lang = (event.target as HTMLSelectElement).value;
-    this.languageService.changelanguage(lang);
-    console.log("NavigationComponent.selectValue: changing selector value specifically to " + lang);
-    (document.getElementById("languageOptions") as HTMLSelectElement).value = lang;
-
-    const base = window.location.origin;
-    let path = window.location.pathname;
-    console.log("NavigationComponent.selectValue: Current base: " + base + ", current path: " + path + " Changing language to: " + lang);
+  selectLanguage(event: Event) {
+    const pickedLanguage = (event.target as HTMLSelectElement).value;
+    this.languageService.changelanguage(pickedLanguage);
+    console.log("NavigationComponent.selectValue: changing selector value specifically to " + pickedLanguage);
+    (document.getElementById("languageOptions") as HTMLSelectElement).value = pickedLanguage;
     
-    this.updateUrl(base, path, lang);
+    this.updateUrl(pickedLanguage);
   }
 
-  updateUrl(base: string, path: string, newLanguage: string) {
-    const oldUrl = base + path;
-    const defaultLanguage = this.languageService.getDefaultLanguage();
+  updateUrl(newLanguage: string) {    
+    const baseURI = document.baseURI;
+    let path = window.location.pathname;
+    console.log("NavigationComponent.updateUrl: Current baseUri: " + baseURI + ", current path: " + path + " Changing language to: " + newLanguage);
     const currentLanguage = this.languageService.getCurrentLanguageFromUrl();
-
-    if (currentLanguage == defaultLanguage) {
-      if (newLanguage == defaultLanguage) {
-        console.log("already on default language (" + defaultLanguage + ") page, do nothing");
-      } else {
-        path = "/" + newLanguage + path;
-        console.log("new language " + newLanguage + " added to the default path " + path);
-      }
-    } else {
-      if (newLanguage == defaultLanguage) {
-        path = path.substring(3);
-        console.log(currentLanguage + " removed from the beginning of the path: " + path + " to display the default language page");
-      } else if (newLanguage == currentLanguage) {
-        console.log("already on " + currentLanguage + " page, do nothing");
-      } else {
-        console.log("language " + currentLanguage + " replaced by " + newLanguage + " in the path");
-          path = "/" + newLanguage + path.substring(3);
-      }
-    } 
-
-    const newUrl = base + path;
-    console.log("old url: " + oldUrl + " new url: " + newUrl);
     
-    if (oldUrl != newUrl) {
-      console.log("Go to page: " + base + "" + path);
-      window.location.href = base + "" + path;
-    } else {
-      console.log("no change in url, stay on the page");  
+    let route = path;
+    if (route.includes("/" + currentLanguage + "/")) { // if path has language code in it, remove it, since it's also present in baseURI
+      route = route.substring(3); // leave the slash in the beginning
     }
+    
+   if (newLanguage == currentLanguage) {
+     const currentUrl = baseURI.substring(0, baseURI.length - 1) + route;
+     console.log("no change in url " + currentUrl + " stay on the page");  
+   } else {
+     console.log("language " + currentLanguage + " replaced by " + newLanguage + " in the path");
+     const newUrl = baseURI.substring(0, baseURI.length - 3) + newLanguage + route; // replace current languageCode/ with the new languageCode, and add the route
+     console.log("Go to page: " + newUrl);
+     window.location.href = newUrl;
+   }
   }
 
   getAllSupportedLanguageCodes(): string[] {

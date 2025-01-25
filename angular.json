@@ -5,9 +5,7 @@
   "projects": {
     "my-portfolio": {
       "i18n": {
-        "sourceLocale": {
-          "baseHref": "/",
-          "code": "et"},
+        "sourceLocale": "et",
         "locales": {
           "en": "src/locale/messages.en.xlf"
         }

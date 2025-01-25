@@ -13,27 +13,29 @@ export class LanguageService {
 
   private allSupportedLanguageCodes: string[];
   private allSupportedLanguageDisplayNames: string[];
-  private allNonDefaultLanguages: string[];
 
   private lang: string;
 
   constructor() { 
     this.allSupportedLanguageCodes = this.loadAllSupportedLanguageCodes();
     this.allSupportedLanguageDisplayNames = this.loadAllSupportedLanguageDisplayNames();
-    this.allNonDefaultLanguages = this.loadAllNonDefaultLanguages();
 
     console.log("LanguageService: init: loading initial language from the url");
     this.lang = this.getCurrentLanguageFromUrl();
   }
 
   getCurrentLanguageFromUrl(): string {
+    const defaultLanguage = navigator.language;
+    console.log("user default language: " + defaultLanguage);
     const path = window.location.pathname;
+    const baseURI = document.baseURI;
     console.log("base: " + window.location.origin + ", pathname: " + path);
+    console.log("baseURI: " + document.baseURI);
 
-    for (let i = 0; i < this.allNonDefaultLanguages.length; i++) {
-      if (path.includes("/" + this.allNonDefaultLanguages[i]+"/")) {
-        console.log("language found from the url: " + this.allNonDefaultLanguages[i]);
-        return this.allNonDefaultLanguages[i];
+    for (let i = 0; i < this.allSupportedLanguageCodes.length; i++) {
+      if (baseURI.includes("/" + this.allSupportedLanguageCodes[i]+"/")) {
+        console.log("language found from the url: " + this.allSupportedLanguageCodes[i]);
+        return this.allSupportedLanguageCodes[i];
       }
     }
     console.log("no specific language found from the url, retrieving the default language: " + this.defaultLanguage);
@@ -56,10 +58,6 @@ export class LanguageService {
     return this.allSupportedLanguageDisplayNames;
   }
 
-  getAllNonDefaultLanguages() {
-    return this.allNonDefaultLanguages;
-  }
-
   changelanguage(newLang: string) {
     this.lang = newLang;
     console.log("LanguageService: language set to: " + this.lang);
@@ -73,13 +71,4 @@ export class LanguageService {
     return this.allSupportedLanguages.map(obj => obj.displayName);
   }
 
-  private loadAllNonDefaultLanguages() : string[] {
-    const allNonDefaultLanguages: string[] = []
-    this.allSupportedLanguages.map(obj => obj.lang).forEach(lang => {
-      if (lang != this.defaultLanguage) {
-        allNonDefaultLanguages.push(lang);
-      }
-    })
-    return allNonDefaultLanguages;
-  }
 }
