@@ -97,56 +97,63 @@
         <source> See pole õige meiliformaat. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/form/form.component.html</context>
-          <context context-type="linenumber">14,16</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="validEmailLength" datatype="html">
+        <source> Meiliaadress peaks olema vähemalt 10 tähemärki pikk. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/form/form.component.html</context>
+          <context context-type="linenumber">16,18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="chooseLikedVeggies" datatype="html">
         <source> Vali kõik köögiviljad, mis Sulle meeldivad </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/form/form.component.html</context>
-          <context context-type="linenumber">23,24</context>
+          <context context-type="linenumber">25,26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="chooseDisikedVeggies" datatype="html">
         <source> Vali kõik köögiviljad, mis Sulle ei meeldi </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/form/form.component.html</context>
-          <context context-type="linenumber">35,36</context>
+          <context context-type="linenumber">37,38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="validPercentageRequired" datatype="html">
         <source> Protsendi valimine on kohustuslik. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/form/form.component.html</context>
-          <context context-type="linenumber">50,51</context>
+          <context context-type="linenumber">52,53</context>
         </context-group>
       </trans-unit>
       <trans-unit id="validPercentageMin" datatype="html">
         <source> Protsendi minimaalne väärtus on <x id="INTERPOLATION" equiv-text="{{minPercentage}}"/>. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/form/form.component.html</context>
-          <context context-type="linenumber">52,53</context>
+          <context context-type="linenumber">54,55</context>
         </context-group>
       </trans-unit>
       <trans-unit id="validPercentageMax" datatype="html">
         <source> Protsendi maksimaalne väärtus on <x id="INTERPOLATION" equiv-text="{{maxPercentage}}"/>. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/form/form.component.html</context>
-          <context context-type="linenumber">54,55</context>
+          <context context-type="linenumber">56,57</context>
         </context-group>
       </trans-unit>
       <trans-unit id="choosePercentage" datatype="html">
         <source>Kui suure osa Sinu menüüst köögiviljad moodustavad:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/form/form.component.html</context>
-          <context context-type="linenumber">58,59</context>
+          <context context-type="linenumber">60,61</context>
         </context-group>
       </trans-unit>
       <trans-unit id="sendButton" datatype="html">
         <source>Saada</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/form/form.component.html</context>
-          <context context-type="linenumber">64</context>
+          <context context-type="linenumber">66</context>
         </context-group>
       </trans-unit>
       <trans-unit id="portfolioLabel" datatype="html">
@@ -248,7 +255,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="gamePagePlaceholder" datatype="html">
-        <source>Siia tuleb hiljem mingi mäng, mis kasutab RESTi põhimõtet. Idee on arendamisel. </source>
+        <source>Siia tuleb hiljem mäng, mis kasutab RESTi põhimõtet. Idee on arendamisel. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/restgame/restgame.component.html</context>
           <context context-type="linenumber">1,2</context>
@@ -266,6 +273,118 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
           <context context-type="linenumber">3,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectIntroduction" datatype="html">
+        <source>Hetkel on siin näha kaks projekti: väike galerii projekt ja natuke mahukam küsitluse projekt. Kolmas - mänguprojekt - on veel varases arendusjärgus. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="welcomeCarouselHeader" datatype="html">
+        <source>Galeriiprojekt</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="welcomeCarouselSummary" datatype="html">
+        <source>Sai tehtud väikeseks näpuharjutuseks. See oli esimene projekt Angulariga. Nooltega edasi-tagasi ja ringikeste abil konkreetsele pildile liikumist võimaldav komponent tundus esimeseks projektiks täpselt paras. Selle projekti jaoks serveriarendust vaja ei läinud, kõik muutused toimuvad brauseris. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">9,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="welcomePollHeader" datatype="html">
+        <source>Küsitluseprojekt</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="welcomePollSummary" datatype="html">
+        <source>Selle projekti eesmärk oli katsetada, kuidas veebiarenduses väga tavaline stsenaarium ehk ankeedi täitmine ja selle serverile saatmine Angulariga käib. Serveri pool kasutasin Javat Spring Booti abiga. Andmeid hoitakse mälupõhises H2 baasis.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="welcomePollDetailsToggle" datatype="html">
+        <source>Projektist lähemalt</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">15,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="welcomePollDetailsFECode" datatype="html">
+        <source>Kliendipoolne kood (Typescript + Angular) asub </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="welcomePollDetailsFECodeLink" datatype="html">
+        <source> siin </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">17,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="welcomePollDetailsBECode" datatype="html">
+        <source>Serveripoolne kood (Java + Spring Boot + Spring Data JPA + H2) asub </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="welcomePollDetailsBECodeLink" datatype="html">
+        <source> siin </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">19,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4781363274868692378" datatype="html">
+        <source>Joonis kliendi ja serveri suhtlusest</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="welcomePollCommDiagramCaption" datatype="html">
+        <source>Kliendi ja serveri suhtlus</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">29,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="pollCommDiagramDescription" datatype="html">
+        <source> Kuna selle projekti eesmärk oli katsetada ankeedi loomist, mitte uuringut läbi viia, siis küsitluses kogutud andmeid kasutatakse ainult vastajale tagasiside pakkumiseks. Projektis oli ette nähtud kaks etappi, millest hetkel on valmis esimene. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Esimeses etapis pidi valmima suurem osa veebisüsteemist, milles kliendi ja serveri vahel liigub ühte tüüpi päring (<x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;codeFont&quot;&gt;"/>SubmitPollRequest<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>). Päringuga saadab klient serverile kasutaja sisestatud andmed, siis kui too vajutab ankeedi &quot;Saada&quot; nuppu. Server salvestab andmed ja saadab tagasi seni kogutud andmete pealt arvutatud statistika. Nii klient kui server hoiavad täpselt samasugust nimekirja küsitluses kasutatud köögiviljadest. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Teises faasis pidi lisanduma veel üks päring, mille klient saadab serverile enne ankeedi kuvamist (<x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;codeFont&quot;&gt;"/>GetPollRequest<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>). Selle päringu eesmärk on saada serverilt köögiviljade nimekiri, mille põhjal ankeet koostada. Pärast teist faasi hoiab nimekirja ainult server. Uue köögivilja lisandumisel või olemasolevate nimetuste parandamisel, tuleb uuendada ainult andmebaasi. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">33,38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7607897327494930302" datatype="html">
+        <source>Joonis serveri ülesehitusest</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="welcomePollBEDiagramCaption" datatype="html">
+        <source>Serveri ülesehitus</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">47,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="pollBEDiagramDescription" datatype="html">
+        <source> Joonisel on näha serveri ülesehitus pärast esimese faasi. Eristatavad on andmebaasis olevad tabelid, kuhu küsitluse andmeid kogutakse. Tabeleid peegeldavad serveri klassid. Baasi tabelite ja klasside vahelist suhtlust koordineerib Spring Data JPA. Serveri paigaldamise hõlbustamiseks (kuna seatud eesmärgi kohaselt andmeid pikaajaliselt hoida vaja ei ole) sai andmebaasiks valitud H2. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Esimeses faasis pakub server kliendile kasutamiseks ühte URLi <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;codeFont&quot;&gt;"/>.../poll/submit<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>, millele POST päringuid saata. Päringu laekumisel, selle väljad valideeritakse. Valideerimine on analoogne kliendi pool toimuvale valideerimisele (kontrollitakse emaili formaati, protsendi väärtuse kuulumist ettenähtud vahemikku, kohustuslike väljade olemasolu jne), lisaks kontrollitakse, et valitud köögiviljad (õigemini nende <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;codeFont&quot;&gt;"/>id<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/>-d) oleksid baasis olemas. Vastasel juhul päringut edasi ei töödelda ja kliendile vastatakse veateatega. Kui kõik sobib, salvestatakse andmed baasi. Järgmise sammuna kogutakse baasist hetkeseisuga statistikat ja saadetakse see vastusena kliendile tagasi. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">51,54</context>
         </context-group>
       </trans-unit>
     </body>

@@ -20,18 +20,18 @@
 .icon-li {
     background: url("/social-icons.png") 0 0;
 }
-.icon-fb {
+.icon-gh {
     background: url("/social-icons.png") 80px 0;
 }
-.icon-gh {
+.icon-fb {
     background: url("/social-icons.png") 164px 0;
 }
 .icon-li:hover {
     background: url("/social-icons.png") 0 80px;
 }
-.icon-fb:hover {
+.icon-gh:hover {
     background: url("/social-icons.png") 80px 80px;
 }
-.icon-gh:hover {
+.icon-fb:hover {
     background: url("/social-icons.png") 164px 80px;
 }

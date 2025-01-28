@@ -12,6 +12,8 @@
                     <div class="formError" i18n="@@validEmailRequired"> Meiliaadressi sisestamine on kohustuslik. </div>
                 } @else if (email?.errors?.["email"]) {
                     <div class="formError" i18n="@@validEmailFormat"> See pole õige meiliformaat. </div>
+                } @else if (email?.errors?.["minlength"]) {
+                    <div class="formError" i18n="@@validEmailLength"> Meiliaadress peaks olema vähemalt 10 tähemärki pikk. </div>
                 }
             }  
             <input type="email" name="email" id="email" formControlName="email" class="inputText" required placeholder="smth@smth.ee"> 

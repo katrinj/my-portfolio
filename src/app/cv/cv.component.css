@@ -14,7 +14,7 @@
 }
 
 .timeLineItems {
-    margin-top: 5rem;
+    margin-top: 7rem;
     width: 80%;
     position: absolute;
     top: 40%;
@@ -86,7 +86,7 @@ p.remark {
 }
 
 .techItem {
-    border: 0.2rem solid var(--base-color-light);
+    border: 0.15rem solid var(--base-color-light);
     border-radius: 1.2rem;
     padding: 0.8rem;
     margin: 0.4rem;
@@ -178,7 +178,7 @@ canvas {
     .timeLineItems {
         top: 30%;
         gap: 2rem;
-        margin-top: 2rem;
+        margin-top: 1.5rem;
     }
     
     p.itemHeader {

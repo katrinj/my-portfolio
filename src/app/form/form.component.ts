@@ -22,7 +22,7 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
     this.poll = new FormGroup({
-      email: new FormControl('', [Validators.email, Validators.required]),
+      email: new FormControl('', [Validators.email, Validators.required, Validators.minLength(10)]),
       percentage: new FormControl('', [Validators.required, Validators.min(this.minPercentage), Validators.max(this.maxPercentage)]),
       likedveggies: new FormArray(this.getAllVeggies()),
       dislikedveggies: new FormArray(this.getAllVeggies()),

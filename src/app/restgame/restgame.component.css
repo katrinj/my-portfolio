@@ -4,3 +4,7 @@ p {
     justify-content: center;
     margin: 3rem auto 3rem auto;
 }
+
+.placeholderArea {
+    height: 50rem;
+}

@@ -10,8 +10,8 @@ export class PollApiService {
   constructor() { }
 
   async sendSubmitPollRequest(request : SubmitPollRequest) : Promise<SubmitPollResponse | undefined> {
-     let url = "http://localhost:8080/poll/submit"
-    //let url = "https://poll-app-758004356761.europe-north1.run.app/poll/submit";
+    //let url = "http://localhost:8080/poll/submit"
+    let url = "https://poll-app-758004356761.europe-north1.run.app/poll/submit";
     
     try {
       const response = await fetch(url, {

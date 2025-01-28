@@ -8,5 +8,23 @@ import { HeaderComponent } from '../header/header.component';
   styleUrl: './welcome.component.css'
 })
 export class WelcomeComponent {
+  pollDetailsHidden = true;
 
+  togglePollDetails() {
+    this.pollDetailsHidden = !this.pollDetailsHidden;
+    let stateButton = document.getElementById("detailsStateButton") as HTMLButtonElement;
+    if (this.pollDetailsHidden) {
+      stateButton.innerHTML = "+"; // indicates it can be expanded
+    } else {
+      stateButton.innerHTML = "-"; // indicates it can be hidden
+    }
+  }
+
+  getPollDetailsClass(): string {
+    if (this.pollDetailsHidden) {
+      return "detailsHidden";
+    } else {
+      return "detailsVisible"
+    }
+  }
 }

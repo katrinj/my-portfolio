@@ -151,7 +151,7 @@ export class CvDataService {
     }
   ];
 
-  private programmingLanguages = ["Java", "JS", "TS", "HTML", "CSS", "SQL"];
+  private programmingLanguages = ["Java", "Javascript", "Typescript", "HTML", "CSS", "SQL"];
   private helperSoftware = ["Angular", "Spring", "Docker", "Jenkins", "Git"];
   private artSoftware = ["Blender", "Krita", "Adobe Photoshop", "Adobe Illustrator"];
 

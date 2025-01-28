@@ -1,3 +1,60 @@
 <app-header />
 <h2 i18n="@@welcomeMessage">Tere tulemast minu kodulehele!</h2>
-<p i18n="@@welcomeDescription">Siit leiate mõned minu veebiarenduse miniprojektid.</p>
+<p class="subtitle" i18n="@@welcomeDescription">Siit leiate mõned minu veebiarenduse miniprojektid.</p>
+<div class="projectDescriptions" i18n="@@projectIntroduction">Hetkel on siin näha kaks projekti: väike galerii projekt ja natuke mahukam küsitluse projekt. Kolmas - mänguprojekt - on veel varases arendusjärgus. </div>
+
+<main class="projectDescriptions">
+    <section class="project">
+        <h3 i18n="@@welcomeCarouselHeader">Galeriiprojekt</h3>
+        <p i18n="@@welcomeCarouselSummary">Sai tehtud väikeseks näpuharjutuseks. See oli esimene projekt Angulariga. Nooltega edasi-tagasi ja ringikeste abil konkreetsele pildile liikumist võimaldav komponent tundus esimeseks projektiks täpselt paras. Selle projekti jaoks serveriarendust vaja ei läinud, kõik muutused toimuvad brauseris. </p>
+    </section>
+
+    <section class="project">
+        <h3 i18n="@@welcomePollHeader">Küsitluseprojekt</h3>
+        <p i18n="@@welcomePollSummary">Selle projekti eesmärk oli katsetada, kuidas veebiarenduses väga tavaline stsenaarium ehk ankeedi täitmine ja selle serverile saatmine Angulariga käib. Serveri pool kasutasin Javat Spring Booti abiga. Andmeid hoitakse mälupõhises H2 baasis.</p>
+        <div class="togglePollDetails" (click)="togglePollDetails()"><button id="detailsStateButton">+</button><span i18n="@@welcomePollDetailsToggle">Projektist lähemalt</span></div>
+        <div id="pollDetails" [class]="getPollDetailsClass()">
+            <p class="code" i18n="@@welcomePollDetailsFECode">Kliendipoolne kood (Typescript + Angular) asub </p> <a href="https://github.com/katrinj/my-portfolio" i18n="@@welcomePollDetailsFECodeLink"> siin </a>
+            <br>
+            <p class="code" i18n="@@welcomePollDetailsBECode">Serveripoolne kood (Java + Spring Boot + Spring Data JPA + H2) asub </p> <a href="https://github.com/katrinj/poll" i18n="@@welcomePollDetailsBECodeLink"> siin </a>
+            <div class="diagrams">
+                <div class="communicationDiagram">
+                    <picture>
+                        <source media="(min-width:600px)" srcset="./FE-BE-comm_696x692px.jpg">
+                        <source media="(min-width:450px)" srcset="./FE-BE-comm_550x547px.jpg">
+                        <source media="(min-width:350px)" srcset="./FE-BE-comm_400x719px.jpg">
+                        <source media="(min-width:250px)" srcset="./FE-BE-comm_300x539px.jpg">
+                        <img src="./FE-BE-comm_400x719px.jpg" alt="Joonis kliendi ja serveri suhtlusest" i18n-alt>
+                    </picture>
+                    <caption i18n="@@welcomePollCommDiagramCaption">Kliendi ja serveri suhtlus</caption>
+                </div>
+
+                <div class="diagramDescription" i18n="@@pollCommDiagramDescription"> 
+                    Kuna selle projekti eesmärk oli katsetada ankeedi loomist, mitte uuringut läbi viia, siis küsitluses kogutud andmeid kasutatakse ainult vastajale tagasiside pakkumiseks. Projektis oli ette nähtud kaks etappi, millest hetkel on valmis esimene. 
+                    <br><br>
+                    Esimeses etapis pidi valmima suurem osa veebisüsteemist, milles kliendi ja serveri vahel liigub ühte tüüpi päring (<span class="codeFont">SubmitPollRequest</span>). Päringuga saadab klient serverile kasutaja sisestatud andmed, siis kui too vajutab ankeedi "Saada" nuppu. Server salvestab andmed ja saadab tagasi seni kogutud andmete pealt arvutatud statistika. Nii klient kui server hoiavad täpselt samasugust nimekirja küsitluses kasutatud köögiviljadest. 
+                    <br><br>
+                    Teises faasis pidi lisanduma veel üks päring, mille klient saadab serverile enne ankeedi kuvamist (<span class="codeFont">GetPollRequest</span>). Selle päringu eesmärk on saada serverilt köögiviljade nimekiri, mille põhjal ankeet koostada. Pärast teist faasi hoiab nimekirja ainult server. Uue köögivilja lisandumisel või olemasolevate nimetuste parandamisel, tuleb uuendada ainult andmebaasi.
+                </div>
+
+                <div class="BEDiagram">
+                    <picture>
+                        <source media="(min-width:600px)" srcset="./BE-model_655x1709px.jpg">
+                        <source media="(min-width:350px)" srcset="./BE-model_400x1044px.jpg">
+                        <source media="(min-width:250px)" srcset="./BE-model_300x783px.jpg">
+                        <img src="./BE-model_400x1044px.jpg" alt="Joonis serveri ülesehitusest" i18n-alt>
+                    </picture>
+                    <caption i18n="@@welcomePollBEDiagramCaption">Serveri ülesehitus</caption>
+                </div>
+
+                <div class="diagramDescription" i18n="@@pollBEDiagramDescription">
+                    Joonisel on näha serveri ülesehitus pärast esimese faasi. Eristatavad on andmebaasis olevad tabelid, kuhu küsitluse andmeid kogutakse. Tabeleid peegeldavad serveri klassid. Baasi tabelite ja klasside vahelist suhtlust koordineerib Spring Data JPA. Serveri paigaldamise hõlbustamiseks (kuna seatud eesmärgi kohaselt andmeid pikaajaliselt hoida vaja ei ole) sai andmebaasiks valitud H2. 
+                    <br><br>
+                    Esimeses faasis pakub server kliendile kasutamiseks ühte URLi <span class="codeFont">.../poll/submit</span>, millele POST päringuid saata. Päringu laekumisel, selle väljad valideeritakse. Valideerimine on analoogne kliendi pool toimuvale valideerimisele (kontrollitakse emaili formaati, protsendi väärtuse kuulumist ettenähtud vahemikku, kohustuslike väljade olemasolu jne), lisaks kontrollitakse, et valitud köögiviljad (õigemini nende <span class="codeFont">id</span>-d) oleksid baasis olemas. Vastasel juhul päringut edasi ei töödelda ja kliendile vastatakse veateatega. Kui kõik sobib, salvestatakse andmed baasi. Järgmise sammuna kogutakse baasist hetkeseisuga statistikat ja saadetakse see vastusena kliendile tagasi. 
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+</main>

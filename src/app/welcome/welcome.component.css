@@ -1,5 +1,91 @@
-h2, p {
+h2, .subtitle {
     display: flex;
     justify-content: center;
     font-weight: normal;
 }
+.projectDescriptions {
+    padding: 0.5rem;
+}
+
+.project {
+    padding-bottom: 2rem;
+}
+
+p.code { 
+    margin: 0.5rem 0;
+    display: inline-block;
+}
+
+.togglePollDetails {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    cursor: pointer;
+}
+
+.detailsHidden {
+    display: none;
+}
+
+.detailsVisible {
+    display: block;
+    margin-left: 0.5rem;
+}
+
+#detailsStateButton {
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--base-color-medium);
+    color: var(--font-color-darkest);
+    font-weight: bold;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.diagrams {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.communicationDiagram, .BEDiagram {
+    justify-items: center;
+}
+
+.codeFont {
+    font-style: italic;
+}
+
+.diagramDescription {
+    padding-right: 1rem;
+    text-align: justify;
+    align-content: center;
+}
+
+caption {
+    display: block;
+    text-align: left;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media only screen and (min-width: 1100px) {
+    caption {
+        font-size: 1.5rem;
+    }
+
+    .diagrams {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .diagramDescription {
+        padding-right: 4rem;
+    }
+}
+
