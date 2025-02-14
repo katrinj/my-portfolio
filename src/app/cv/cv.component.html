@@ -1,27 +1,29 @@
 <main>
     <p class="currentYear">2025</p>
     <canvas #canvas></canvas>
-    <div class="timeLineItems">
-        @for (item of getTimeLineItems(); track item) {
-            <div [class]=getTimeLineItemTypeClass(item.type)>
-                <div class="timeLineItemHeader">
-                    <p class="itemHeader">{{item.year}}</p>
+    <div class="timeLineItemsContainer">
+        <div class="timeLineItems">
+            @for (item of getTimeLineItems(); track item) {
+                <div [class]=getTimeLineItemTypeClass(item.type)>
+                    <div class="timeLineItemHeader">
+                        <p class="itemHeader">{{item.year}}</p>
+                    </div>
+
+                    <p class="material-icons timeLineTypeIcon"> 
+                        @if(isWorkItem(item.type)) {
+                        business_center 
+                    } @else {
+                        school
+                    }
+                    </p>
+
+                    <p class="company">{{item.company}}</p>
+                    <p class="role">{{item.role}}</p>
+                    <p class="subject">{{item.subject}}</p>
+                    <p class="remark">{{item.remark}}</p>
                 </div>
-
-                <p class="material-icons timeLineTypeIcon"> 
-                    @if(isWorkItem(item.type)) {
-                    business_center 
-                } @else {
-                    school
-                }
-                </p>
-
-                <p class="company">{{item.company}}</p>
-                <p class="role">{{item.role}}</p>
-                <p class="subject">{{item.subject}}</p>
-                <p class="remark">{{item.remark}}</p>
-            </div>
-         }
+            }
+        </div>
     </div>
 
     <div class="sectionTitle" i18n="@@techStackTitle">Tehnilised kogemused</div>

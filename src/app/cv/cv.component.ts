@@ -23,7 +23,7 @@ export class CvComponent implements AfterViewInit {
     let timeLineHeight = timeLineData.height;
     console.log("offset: " + timeLineItems.offsetHeight + " height: " + timeLineData.height);
     
-    const extra = 160;    
+    const extra = 180;
     canvas.height = timeLineHeight + extra;
     canvas.width = 20;
 

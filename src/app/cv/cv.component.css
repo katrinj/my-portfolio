@@ -14,14 +14,13 @@
 }
 
 .timeLineItems {
-    margin-top: 7rem;
     width: 80%;
     position: absolute;
-    top: 40%;
     left: 10%;
     display: flex;
     flex-direction: column;
-    gap: 2.8rem;
+    bottom: 7rem;
+    gap: 3rem;
 }
 
 .timeLineItem {
@@ -169,16 +168,18 @@ p.remark {
 }
 
 canvas {
-    margin: 3rem auto;
-    position: relative;
+    margin: 3rem auto 0 auto;
     display: block;
+}
+
+.timeLineItemsContainer {
+    position: relative;
 }
 
 @media only screen and (min-width: 600px) {
     .timeLineItems {
-        top: 30%;
         gap: 2rem;
-        margin-top: 1.5rem;
+        bottom: 5rem;
     }
     
     p.itemHeader {
