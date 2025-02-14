@@ -9,18 +9,18 @@ export class CvDataService {
 
   private timeLineData_et = [
     {
-    year: "2023 - 2024",
-    company: "Webhelp OÜ / Concentrix Estonia OÜ",
-    role: "Andmesisestaja",
-    remark: "täiskohaga kaugtöö",
-    type: "work"
+      year: "2023 - 2024",
+      company: "Webhelp OÜ / Concentrix Estonia OÜ",
+      role: "Andmesisestaja",
+      remark: "täiskohaga kaugtöö",
+      type: "work"
     },
     {
       year: "2022 - 2023",
       company: "Tartu Kunstikool",
       role: "Koolitaja",
       subject: "3D kursused algajatele",
-      remark: "õpilaste ja täiskasvanute rühmadele",
+      remark: "õpilaste ja täiskasvanute rühmad",
       type: "work"
     },    
     {
@@ -42,7 +42,7 @@ export class CvDataService {
       year: "2017 - 2020",
       company: "Tartu Ülikool",
       role: "Tõlkeõpetus", 
-      subject: "ENG ↔ EST; GER → EST",
+      subject: "ENG ↔ EST; DEU → EST",
       remark: "MA (cum laude)",
       type: "school"
     },
@@ -51,7 +51,7 @@ export class CvDataService {
       company: "Playtech Estonia OÜ",
       role: "Tarkvaraarendaja",
       subject: "Java", 
-      remark: "vahelduva koormusega töö kontoris",
+      remark: "vahelduva koormusega töö enamasti kontoris",
       type: "work"
     },
     {
@@ -81,15 +81,15 @@ export class CvDataService {
 
   private timeLineData_en = [
     {
-    year: "2023 - 2024",
-    company: "Webhelp OÜ / Concentrix Estonia OÜ",
-    role: "Data entry specialist",
-    remark: "fulltime, remote",
-    type: "work"
+      year: "2023 - 2024",
+      company: "Webhelp / Concentrix Estonia",
+      role: "Data entry specialist",
+      remark: "fulltime, remote",
+      type: "work"
     },
     {
       year: "2022 - 2023",
-      company: "Tartu Kunstikool",
+      company: "Tartu Art School",
       role: "Instructor",
       subject: "3D courses for beginners",
       remark: "highschool student and adult groups",
@@ -97,33 +97,33 @@ export class CvDataService {
     },
     {
       year: "2020 - 2023",
-      company: "Tartu Kunstikool",
-      role: "3D-kunstnik-kujundaja", 
-      remark: "4. taseme kutsetunnistus",
+      company: "Tartu Art School",
+      role: "3D Designer", 
+      remark: "occupational qualification: designer, level 4",
       type: "school"
     },
     {
       year: "2018 - 2021",
-      company: "Luisa Tõlkebüroo OÜ",
-      role: "Tõlkija",
+      company: "Luisa Translation Agency",
+      role: "Translator",
       subject: "ENG → EST", 
-      remark: "projektipõhine kaugtöö",
+      remark: "project based remote work",
       type: "work"
     },
     {
       year: "2017 - 2020",
       company: "Tartu University",
       role: "Translation studies", 
-      subject: "ENG ↔ EST; GER → EST",
+      subject: "ENG ↔ EST; DEU → EST",
       remark: "MA (cum laude)",
       type: "school"
     },
     {
       year: "2015 - 2020",
-      company: "Playtech Estonia OÜ",
+      company: "Playtech Estonia",
       role: "Software developer",
       subject: "Java", 
-      remark: "",
+      remark: "varying workload, mainly in office",
       type: "work"
     },
     {
@@ -136,10 +136,10 @@ export class CvDataService {
     },
     {
       year: "2007 - 2008",
-      company: "Aktors OÜ",
+      company: "Aktors",
       role: "Software developer",
       subject: "Java", 
-      remark: "",
+      remark: "part time, mainly in office",
       type: "work"
     },
     {
