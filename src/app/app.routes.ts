@@ -4,6 +4,7 @@ import { CvComponent } from './cv/cv.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { RestgameComponent } from './restgame/restgame.component';
 import { PollProjectComponent } from './poll-project/poll-project.component';
+import { ThreeFiberComponent } from './three-fiber/three-fiber.component';
 
 export const routes: Routes = [
     {
@@ -30,6 +31,11 @@ export const routes: Routes = [
         path: 'restgame',
         component: RestgameComponent,
         title: $localize`:@@gamePageTitle:Portfoolio: REST-mängu projekt`
+    },
+    {
+        path: 'react3D',
+        component: ThreeFiberComponent,
+        title: $localize`:@@react3DPageTitle:Portfoolio: 3D projekt Reactiga`
     }
 
 ];

@@ -6,70 +6,77 @@
         <source>Portfoolio - KJ</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.routes.ts</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="cvPageTitle" datatype="html">
         <source>Portfoolio: CV</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.routes.ts</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="pollPageTitle" datatype="html">
         <source>Portfoolio: Küsitluse projekt</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.routes.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="galleryPageTitle" datatype="html">
         <source>Portfoolio: Galerii projekt</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.routes.ts</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="gamePageTitle" datatype="html">
         <source>Portfoolio: REST-mängu projekt</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.routes.ts</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="react3DPageTitle" datatype="html">
+        <source>Portfoolio: 3D projekt Reactiga</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.routes.ts</context>
+          <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="techStackTitle" datatype="html">
         <source>Tehnilised kogemused</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/cv/cv.component.html</context>
-          <context context-type="linenumber">27,29</context>
+          <context context-type="linenumber">29,31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="languagesTitle" datatype="html">
         <source>Keeled</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/cv/cv.component.html</context>
-          <context context-type="linenumber">52,54</context>
+          <context context-type="linenumber">54,56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="certsTitle" datatype="html">
         <source>Sertifikaadid</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/cv/cv.component.html</context>
-          <context context-type="linenumber">67,68</context>
+          <context context-type="linenumber">69,70</context>
         </context-group>
       </trans-unit>
       <trans-unit id="certsLanguagesTitle" datatype="html">
         <source>Keeled:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/cv/cv.component.html</context>
-          <context context-type="linenumber">69,70</context>
+          <context context-type="linenumber">71,72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="certsProgLanguagesTitle" datatype="html">
         <source>Programmeerimiskeeled:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/cv/cv.component.html</context>
-          <context context-type="linenumber">82,83</context>
+          <context context-type="linenumber">84,85</context>
         </context-group>
       </trans-unit>
       <trans-unit id="pollTitle" datatype="html">
@@ -177,11 +184,18 @@
           <context context-type="linenumber">7,8</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="navLinkReact3D" datatype="html">
+        <source>3D-projekt</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/navigation/navigation.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="navLinkGame" datatype="html">
         <source>REST-mäng</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/navigation/navigation.component.html</context>
-          <context context-type="linenumber">8,11</context>
+          <context context-type="linenumber">9,12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="invalidSubmissionError" datatype="html">
@@ -261,6 +275,48 @@
           <context context-type="linenumber">1,2</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="react3DProjectHeader" datatype="html">
+        <source>Reactiga loodud 3D veebiprojekt</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/three-fiber/three-fiber.component.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="react3DProjectDescription" datatype="html">
+        <source> Lehel kuvatakse viis kolmemõõtmelist objekti. Objektid on üksteise suhtes paigal, aga objektikogumit saab ringis liigutada. Mõningal määral saab objektidele lähemale liikuda (sisse-välja suumida). Objektile klõpsates avaneb infoaken objekti kirjeldusega. Akna saab sulgeda vastavale nupule vajutades või aknast väljaspool klõpsates. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/three-fiber/three-fiber.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="react3DProjectFrameworks" datatype="html">
+        <source> Projektis kasutasin React Three Fiber&apos;i ja Drei raamistikke, mis omakorda kasutavad Three.js&apos;i. Olgugi, et serveripoolset arendust vaja polnud, siis projekti paigaldamiseks Google Cloud Run keskkonda lisasin projektile staatiliste failide serveerimiseks Node.js&apos;i koos Expressiga. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/three-fiber/three-fiber.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="react3DProjectModels" datatype="html">
+        <source> Kõik mudelid on pärit Sketchfabist. Tegu on erinevate muuseumite skaneeritud eksponaatidega. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/three-fiber/three-fiber.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="react3DProjectGoal" datatype="html">
+        <source> Projekti eesmärk oli katsetada Three.js&apos;i ja teada saada, kuidas 3D objektide veebilehel kuvamine käib. See eesmärk sai täidetud. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/three-fiber/three-fiber.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="react3DProjectLink" datatype="html">
+        <source>Ava projekt</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/three-fiber/three-fiber.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="welcomeMessage" datatype="html">
         <source>Tere tulemast minu kodulehele!</source>
         <context-group purpose="location">
@@ -276,7 +332,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="projectIntroduction" datatype="html">
-        <source>Hetkel on siin näha kaks projekti: väike galerii projekt ja natuke mahukam küsitluse projekt. Kolmas - mänguprojekt - on veel varases arendusjärgus. </source>
+        <source>Hetkel on siin näha kolm projekti: väike galerii projekt, natuke mahukam küsitluse projekt ja 3D projekt. Neljas - mänguprojekt - on veel varases arendusjärgus. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
           <context context-type="linenumber">4,6</context>
@@ -385,6 +441,27 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
           <context context-type="linenumber">51,54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="welcomeReact3DHeader" datatype="html">
+        <source>3D-projekt Reactiga</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">61,62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="welcomeReact3DSummary" datatype="html">
+        <source> Loe lähemalt </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="linkReact3DPage" datatype="html">
+        <source> siit </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/welcome/welcome.component.html</context>
+          <context context-type="linenumber">62,65</context>
         </context-group>
       </trans-unit>
     </body>

@@ -1,22 +1,22 @@
 <app-header />
 <h2 i18n="@@welcomeMessage">Tere tulemast minu kodulehele!</h2>
 <p class="subtitle" i18n="@@welcomeDescription">Siit leiate mõned minu veebiarenduse miniprojektid.</p>
-<div class="projectDescriptions" i18n="@@projectIntroduction">Hetkel on siin näha kaks projekti: väike galerii projekt ja natuke mahukam küsitluse projekt. Kolmas - mänguprojekt - on veel varases arendusjärgus. </div>
+<div class="projectDescriptions" i18n="@@projectIntroduction">Hetkel on siin näha kolm projekti: väike galerii projekt, natuke mahukam küsitluse projekt ja 3D projekt. Neljas - mänguprojekt - on veel varases arendusjärgus. </div>
 
 <main class="projectDescriptions">
     <section class="project">
-        <h3 i18n="@@welcomeCarouselHeader">Galeriiprojekt</h3>
+        <a routerLink="gallery"><h3 i18n="@@welcomeCarouselHeader">Galeriiprojekt</h3></a>
         <p i18n="@@welcomeCarouselSummary">Sai tehtud väikeseks näpuharjutuseks. See oli esimene projekt Angulariga. Nooltega edasi-tagasi ja ringikeste abil konkreetsele pildile liikumist võimaldav komponent tundus esimeseks projektiks täpselt paras. Selle projekti jaoks serveriarendust vaja ei läinud, kõik muutused toimuvad brauseris. </p>
     </section>
 
     <section class="project">
-        <h3 i18n="@@welcomePollHeader">Küsitluseprojekt</h3>
+        <a routerLink="poll"><h3 i18n="@@welcomePollHeader">Küsitluseprojekt</h3></a>
         <p i18n="@@welcomePollSummary">Selle projekti eesmärk oli katsetada, kuidas veebiarenduses väga tavaline stsenaarium ehk ankeedi täitmine ja selle serverile saatmine Angulariga käib. Serveri pool kasutasin Javat Spring Booti abiga. Andmeid hoitakse mälupõhises H2 baasis.</p>
         <div class="togglePollDetails" (click)="togglePollDetails()"><button id="detailsStateButton">+</button><span i18n="@@welcomePollDetailsToggle">Projektist lähemalt</span></div>
         <div id="pollDetails" [class]="getPollDetailsClass()">
-            <p class="code" i18n="@@welcomePollDetailsFECode">Kliendipoolne kood (Typescript + Angular) asub </p> <a href="https://github.com/katrinj/my-portfolio" i18n="@@welcomePollDetailsFECodeLink"> siin </a>
+            <p class="linkDescription" i18n="@@welcomePollDetailsFECode">Kliendipoolne kood (Typescript + Angular) asub </p> <a href="https://github.com/katrinj/my-portfolio" i18n="@@welcomePollDetailsFECodeLink"> siin </a>
             <br>
-            <p class="code" i18n="@@welcomePollDetailsBECode">Serveripoolne kood (Java + Spring Boot + Spring Data JPA + H2) asub </p> <a href="https://github.com/katrinj/poll" i18n="@@welcomePollDetailsBECodeLink"> siin </a>
+            <p class="linkDescription" i18n="@@welcomePollDetailsBECode">Serveripoolne kood (Java + Spring Boot + Spring Data JPA + H2) asub </p> <a href="https://github.com/katrinj/poll" i18n="@@welcomePollDetailsBECodeLink"> siin </a>
             <div class="diagrams">
                 <div class="communicationDiagram">
                     <picture>
@@ -55,6 +55,11 @@
                 
             </div>
         </div>
+    </section>
+
+    <section class="project">
+        <a routerLink="react3D"><h3 i18n="@@welcomeReact3DHeader">3D-projekt Reactiga</h3></a>
+        <p i18n="@@welcomeReact3DSummary" class="linkDescription"> Loe lähemalt </p> <a routerLink="react3D" i18n="@@linkReact3DPage"> siit </a>
     </section>
     
 </main>

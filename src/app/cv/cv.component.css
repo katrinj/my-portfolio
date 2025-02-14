@@ -198,15 +198,18 @@ canvas {
 
     .languageItems {        
         grid-template-columns: 1fr 1fr;
+        column-gap: 0;
+        row-gap: 5rem;
+        justify-items: center;
     }
     
     .languageItem {
-        width: 100%;
+        width: 85%;
     }
 
     .certItems {
-        width: 75%;
-        gap: 6rem;
+        width: 55%;
+        gap: 7rem;
     }
     
 }
